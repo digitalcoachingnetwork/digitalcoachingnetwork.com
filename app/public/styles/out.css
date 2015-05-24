@@ -11,13 +11,13 @@ body {
   font-size: 20px;
 }
 a {
-  color: #b6ed00;
+  color: #7fffd4;
 }
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #c9ff17;
-  outline-color: #c9ff17;
+  color: #92ffda;
+  outline-color: #92ffda;
 }
 h1 {
   margin-top: 50px;
@@ -236,22 +236,22 @@ h5.text-caption {
 .text-dim {
   color: #b2b2b2;
 }
-.text-yellow {
-  color: #ffbd00;
+.text-highlight {
+  color: #7fffd4;
 }
-a.text-yellow:hover,
-a.text-yellow:focus {
-  color: #ffca33;
-  outline-color: #ffca33;
+a.text-highlight:hover,
+a.text-highlight:focus {
+  color: #9fd;
+  outline-color: #9fd;
   text-decoration: none;
 }
 .text-darkgreen {
-  color: #92be00;
+  color: #33ffba;
 }
 a.text-darkgreen:hover,
 a.text-darkgreen:focus {
-  color: #7fa600;
-  outline-color: #7fa600;
+  color: #0cffae;
+  outline-color: #0cffae;
   text-decoration: none;
 }
 .list-wide li {
@@ -261,21 +261,21 @@ a.text-darkgreen:focus {
   border: solid 5px #808080;
 }
 .btn-dark {
-  border: solid 1px #b6ed00;
+  border: solid 1px #7fffd4;
   background-color: transparent;
   color: #fff;
 }
 .btn-dark:hover {
-  color: #b6ed00;
-  border-color: #b6ed00;
+  color: #7fffd4;
+  border-color: #7fffd4;
 }
 .theme-pale {
   color: #404040;
   background-color: #e6e6e6;
 }
 .theme-pretty {
-  color: #fff;
-  background-color: #000080;
+  color: #000;
+  background-color: #7fffd4;
 }
 .theme-pretty-light {
   background-color: #e6e6e6;
@@ -285,40 +285,40 @@ a.text-darkgreen:focus {
   color: #fff;
 }
 .theme-nature1 {
-  color: #fff;
-  background-color: #000080;
+  color: #000;
+  background-color: #7fffd4;
 }
 .theme-highlight {
-  background-color: #efffbb;
+  background-color: #dffff4;
 }
-.sprite-avatar-raine.img-circle {
+.sprite-avatar-persona.img-circle {
   background-position: -6px -403px;
 }
-.sprite-avatar-catia.img-circle {
+.sprite-avatar-personb.img-circle {
   background-position: -6px -200px;
 }
 .btn-primary {
   font-weight: 100;
   font-size: 24px;
   color: #000;
-  background-color: #b6ed00;
+  background-color: #7fffd4;
   border: 0;
-  border-bottom: solid 5px #ade100;
+  border-bottom: solid 5px #6cffce;
 }
 .btn-primary:hover {
   color: #000;
-  background-color: #c9ff17;
-  border-bottom-color: #b6ed00;
+  background-color: #92ffda;
+  border-bottom-color: #7fffd4;
 }
 .btn-primary:active {
   color: #000;
-  border-bottom-color: #b6ed00;
+  border-bottom-color: #7fffd4;
 }
 .btn-primary:focus {
   color: #000;
-  background-color: #b6ed00;
-  border-bottom-color: #ade100;
-  outline-color: #9bc900;
+  background-color: #7fffd4;
+  border-bottom-color: #6cffce;
+  outline-color: #46ffc1;
 }
 .btn-xl {
   font-size: 32px;

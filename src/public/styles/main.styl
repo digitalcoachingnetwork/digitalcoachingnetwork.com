@@ -5,8 +5,6 @@ white = #fff
 black = #000
 
 midnight =  #2c2c2d
-yellow = rgb(255,189,0)
-grass = rgb(182,237,0)
 
 gray(amount)
 	hsl(0,0,amount + '%')
@@ -30,8 +28,8 @@ body
 	font-size 20px
 
 a
-	color=grass
-	color grass
+	color=aquamarine
+	color color
 
 	&:hover, &:focus
 		text-decoration none
@@ -175,22 +173,22 @@ h1,h2,h3,h4,h5
 .text-dim
 	color #b2b2b2
 
-.text-yellow
-	color yellow
+.text-highlight
+	color aquamarine
 
-a.text-yellow
+a.text-highlight
 	&:hover, &:focus
-		color lighten(yellow, 20%)
-		outline-color lighten(yellow, 20%)
+		color lighten(aquamarine, 20%)
+		outline-color lighten(aquamarine, 20%)
 		text-decoration none
 
 .text-darkgreen
-	color darken(grass, 20%)
+	color darken(aquamarine, 20%)
 
 a.text-darkgreen
 	&:hover, &:focus
-		color darken(grass, 30%)
-		outline-color darken(grass, 30%)
+		color darken(aquamarine, 30%)
+		outline-color darken(aquamarine, 30%)
 		text-decoration none
 
 .list-wide li
@@ -200,7 +198,7 @@ a.text-darkgreen
 	border solid 5px gray(50)
 
 .btn-dark
-	color=grass
+	color=aquamarine
 	border solid 1px color
 	background-color transparent
 	color white
@@ -214,8 +212,8 @@ a.text-darkgreen
 	background-color gray(90)
 
 .theme-pretty
-	color white
-	background-color navy
+	color black
+	background-color aquamarine
 	// background url(/images/www/nature-river.jpg) 0 22%
 
 	// imageWidth = 990px
@@ -231,8 +229,8 @@ a.text-darkgreen
 	color white
 
 .theme-nature1
-	color white
-	background-color navy
+	color black
+	background-color aquamarine
 
 	// imageWidth = 990px
 	// imageWidthTwoThirds = imageWidth*2/3
@@ -251,17 +249,17 @@ a.text-darkgreen
 	// 	background-position 16% 100%
 
 .theme-highlight
-	background-color lighten(grass, 75%)
+	background-color lighten(aquamarine, 75%)
 
 // sprite overrides
-.sprite-avatar-raine.img-circle
+.sprite-avatar-persona.img-circle
 	background-position -6px -403px
-.sprite-avatar-catia.img-circle
+.sprite-avatar-personb.img-circle
 	background-position -6px -200px
 
 // bootstrap overrides
 .btn-primary
-	color=grass
+	color=aquamarine
 	font-weight 100
 	font-size 24px
 	color black
