@@ -2,14 +2,6 @@
 
 > Website for digital coaching business
 
-## Install
-
-```
-
-## Usage
-
-```js
-
 
 ## Development
 ```sh
