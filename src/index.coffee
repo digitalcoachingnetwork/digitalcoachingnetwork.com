@@ -10,5 +10,5 @@ app.use express.static(__dirname + '/public')
 app.use bodyParser.urlencoded extended:false
 app.get '/', indexController.index
 
-server = app.listen process.env.PORT || 8623, ->
+server = app.listen process.env.PORT || 9882, ->
 	console.log 'Express server listening on port ' + server.address().port

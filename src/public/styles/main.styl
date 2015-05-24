@@ -1,0 +1,286 @@
+@import nib
+
+// colors
+white = #fff
+black = #000
+
+midnight =  #2c2c2d
+yellow = rgb(255,189,0)
+grass = rgb(182,237,0)
+
+gray(amount)
+	hsl(0,0,amount + '%')
+
+// constants
+width-xs = 768px
+width-sm = 992px
+width-md = 1200px
+
+// defaults
+*
+	box-sizing border-box
+
+img
+	max-width 100%
+
+body
+	color gray(25)
+	background-color #fff
+	font-family 'Open Sans', Adamina, Georgia, Serif
+	font-size 20px
+
+a
+	color=grass
+	color grass
+
+	&:hover, &:focus
+		text-decoration none
+		color lighten(color, 15%)
+		outline-color lighten(color, 15%)
+
+h1
+	margin-top 50px
+h2
+	margin-top 40px
+h3
+	margin-top 20px
+h4
+	margin-bottom 5px
+
+p, ul
+	line-height 1.7
+	margin-bottom 1.2em
+
+.quote
+	font-family 'Helvetica Neue', Helvetica, Arial, Sans-Serif
+	font-size 32px
+	font-weight 100
+
+.hero
+	h1,h2
+		font-family 'Helvetica Neue', Helvetica, Arial, Sans-Serif
+		font-weight 100
+		margin-top 20px
+	h1
+		font-size 80px
+	h2
+		font-size 42px
+
+.text-lead
+	font-size 1.35em
+	letter-spacing 0.2px
+	margin-right 4px
+
+.container-narrow
+	max-width 800px
+	margin 0 auto
+
+.spread
+	width 100%
+	height 100%
+
+.spread-most
+	width 100%
+	height 76%
+
+.wide
+	width 100%
+
+.block
+	display inline-block
+
+.center
+	display table
+	& > *
+		display table-cell
+		vertical-align middle
+		text-align center
+
+.left
+	float left
+.right
+	float right
+
+@media (max-width: 740px)
+	.title-linebreak
+		display none
+
+@media (min-width: width-sm)
+	.left-sm
+		float left
+	.right-sm
+		float right
+
+// Using the given class prefix, generates 4 different classes for 4 different sizes
+// of the given properties
+//
+//  e.g. sizes(pad, padding) generates:
+//
+// 	.pad-sm {
+// 	  padding: 15px;
+// 	}
+// 	.pad {
+// 	  padding: 25px;
+// 	}
+// 	.pad-md {
+// 	  padding: 50px;
+// 	}
+// 	.pad-lg {
+// 	  padding: 100px;
+// 	}
+sizes(classPrefix, props...)
+	sizeValues = -sm 15px,
+						 '' 25px,
+						 -md 50px,
+						 -lg 100px,
+						 -xl 200px
+	for pair in sizeValues
+		.{classPrefix}{pair[0]}
+			for prop in props
+				{prop} pair[1]
+
+sizes(pad, padding)
+sizes(space, margin)
+sizes(vpad, padding-top, padding-bottom)
+sizes(vspace, margin-top, margin-bottom)
+sizes(space-above, margin-top)
+sizes(space-below, margin-bottom)
+
+.nospace
+	margin 0
+
+.splash-title
+	margin-bottom 60px
+
+@media (max-width: 992px)
+	.splash-title
+		margin-bottom 30px
+
+.splash-subtitle
+	line-height 2em
+	margin 0
+
+.text-caption
+	font-size 16px
+	text-transform uppercase
+	font-weight bold
+
+h1,h2,h3,h4,h5
+	&.text-caption
+		margin-top 20px
+
+.text-sm
+	font-size 16px
+
+.text-dim
+	color #b2b2b2
+
+.text-yellow
+	color yellow
+
+a.text-yellow
+	&:hover, &:focus
+		color lighten(yellow, 20%)
+		outline-color lighten(yellow, 20%)
+		text-decoration none
+
+.text-darkgreen
+	color darken(grass, 20%)
+
+a.text-darkgreen
+	&:hover, &:focus
+		color darken(grass, 30%)
+		outline-color darken(grass, 30%)
+		text-decoration none
+
+.list-wide li
+	margin-bottom 10px
+
+.border-gray
+	border solid 5px gray(50)
+
+.btn-dark
+	color=grass
+	border solid 1px color
+	background-color transparent
+	color white
+	&:hover
+		color color
+		border-color color
+
+// themes
+.theme-pale
+	color gray(25)
+	background-color gray(90)
+
+.theme-pretty
+	color white
+	background-color navy
+	// background url(/images/www/nature-river.jpg) 0 22%
+
+	// imageWidth = 990px
+	// @media (min-width: imageWidth)
+	// 	background-image url(/images/www/nature-river@2x.jpg)
+	// 	background-size 100%
+
+.theme-pretty-light
+	background-color gray(90)
+
+.theme-dark
+	background-color midnight
+	color white
+
+.theme-nature1
+	color white
+	background-color navy
+
+	// imageWidth = 990px
+	// imageWidthTwoThirds = imageWidth*2/3
+	// background url(/images/www/nature-river.jpg) 0 91%
+
+	// @media (min-width: imageWidth)
+	// 	background-image url(/images/www/nature-river@2x.jpg)
+
+	// @media (max-width: width-md)
+	// 	background-position 0 93%
+
+	// @media (max-width: width-sm)
+	// 	background-position 14% 95%
+
+	// @media (max-width: width-xs)
+	// 	background-position 16% 100%
+
+.theme-highlight
+	background-color lighten(grass, 75%)
+
+// sprite overrides
+.sprite-avatar-raine.img-circle
+	background-position -6px -403px
+.sprite-avatar-catia.img-circle
+	background-position -6px -200px
+
+// bootstrap overrides
+.btn-primary
+	color=grass
+	font-weight 100
+	font-size 24px
+	color black
+	background-color color
+	border 0
+	border-bottom solid 5px darken(color,  5%)
+	&:hover
+		color black
+		background-color lighten(color, 15%)
+		border-bottom-color color
+	&:active
+		color black
+		border-bottom-color color
+	&:focus
+		color black
+		background-color color
+		border-bottom-color darken(color, 5%)
+		outline-color darken(color, 15%)
+
+.btn-xl
+	font-size: 32px
+
