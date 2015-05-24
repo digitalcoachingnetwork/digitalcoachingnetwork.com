@@ -5,15 +5,13 @@
 
 ## Development
 ```sh
-$ npm run nodemon
+$ npm install
+$ gulp
+$ npm start
+$ gulp open
 ```
 
 ## Deploy
 
 ```sh
 heroku config:set RELIC_KEY=YOUR_LICENSE_KEY
-```
-
-## License
-
-ISC © [Raine Lourie](https://github.com/metaraine)
