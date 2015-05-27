@@ -10,7 +10,7 @@ block content
 
 	//- hero unit
 	.hero.theme-pretty.center.spread-most
-		.pad
+		.pad.title-color
 			h1.title Make Your Computer Work For You
 				h2.subtitle not the other way around
 			h2.subtitle Learn modern computer and web basics 
@@ -31,11 +31,23 @@ block content
 	//- format & dates
 	.theme-pale
 		.container.vpad-md
+			//- pictures
+			.row
+				.col-sm-4
+					.center.wide.space-below: div
+						img(src= "/images/" + "macorpc.jpg").framed.vcenter
+				.col-sm-4
+					.center.wide.space-below: div
+						img(src= "/images/" + "kanban.jpg").framed.vcenter
+				.col-sm-4
+					.center.wide.space-below: div
+						img(src= "/images/" + "teamrelaxation.jpg").framed
+
 			.row
 				.col-sm-4
 					.center.wide.space-below: div
 						.sprite-icon-hangouts-gray.block
-						h2.text-caption Computer Basics
+						h1.text-caption Computer Basics
 					ul.list-wide
 						li Mac or PC
 						li 
@@ -45,7 +57,7 @@ block content
 					.visible-xs: .space-above-lg
 					.center.wide.space-below: div
 						.sprite-icon-calendar-gray.block
-						h2.text-caption Digital Organization
+						h1.text-caption Digital Organization
 					ul.list-wide
 						li Productivity Tools and Strategies
 						li Simplify your life
@@ -54,11 +66,11 @@ block content
 					.visible-xs: .space-above-lg
 					.center.wide.space-below: div
 						.sprite-icon-calendar-gray.block
-						h2.text-caption Team Productivity
+						h1.text-caption Team Productivity
 					ul.list-wide
 						li Make working with others easy
 						li Collaborate using the latest tools
-							.text-sm and learn how to get the most out of your favorites like Skype, Gmail and Facebook
+							.text-sm and learn how to get the most out of your favorites like Skype, Gmail, and Facebook
 
 
 	//- team

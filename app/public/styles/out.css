@@ -323,3 +323,11 @@ a.text-darkgreen:focus {
 .btn-xl {
   font-size: 32px;
 }
+.title-color {
+  color: #4169e1;
+}
+.framed {
+  display: inline-block;
+  width: 280px;
+  border: solid 8px #000;
+}
