@@ -60,9 +60,9 @@ p, ul
 		font-weight 100
 		margin-top 20px
 	h1
-		font-size 80px
+		font-size 40px
 	h2
-		font-size 42px
+		font-size 22px
 
 .text-lead
 	font-size 1.35em
@@ -212,10 +212,12 @@ a.text-darkgreen
 	background-color gray(90)
 
 .theme-pretty
-	color black
-	background-color aquamarine
-	// background url(/images/www/nature-river.jpg) 0 22%
-
+	// color black
+	// background-color aquamarine
+	background no-repeat 50% 0 fixed
+	background-image url(/images/sunglasses-and-pad.jpg)
+	background-size cover
+	min-height 700px
 	// imageWidth = 990px
 	// @media (min-width: imageWidth)
 	// 	background-image url(/images/www/nature-river@2x.jpg)
@@ -283,20 +285,56 @@ a.text-darkgreen
 	font-size: 32px
 
 .title-color
-	color royalblue
+	color #F0F0EE
 
 .framed
 	display inline-block
-	width 280px 
+	width 380px 
 	border solid 8px #000000
+	opacity 0.8
 
-// attempt to center pictures
+.herotag
+	position relative
+	// bottom 50px
+	// left 50px
+	box-sizing border-box
+	text-align center
+	width 50%
+	height 350px
+	line-height 420px
+	top 230px
+	left 20px
 
-// .vcenter
-//     display: inline-block
-//     vertical-align: middle
-//     float: none
-//     height: auto
-//     box-sizing: border-box
-//     margin: 0 1.5% 10%
-//   	max-width: 97%
+.vert 
+	display inline-block
+	vertical-align middle
+	
+.title
+	font-weight 400
+	font-size 52px
+	margin-bottom 0
+	
+.subtitle
+	font-size 29px
+	margin-bottom 0
+
+#stickynav
+	// background-color transparent
+	font-family 'Open Sans', sans-serif
+	-webkit-transition all 0.6s ease-out
+	-moz-transition all 0.6s ease-out
+	-o-transition all 0.6s ease-out
+	-ms-transition all 0.6s ease-out
+	transition all 0.6s ease-out
+
+#stickynav.scrolled 
+	background rgb(68, 68, 68) //IE
+	background rgba(0, 0, 0, 0.78) //NON-IE
+	// opacity 0.2
+
+a.navbar-brand
+	color white
+	font-size 20px
+
+.dropdown-toggle
+	color black

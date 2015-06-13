@@ -48,10 +48,10 @@ ul {
   margin-top: 20px;
 }
 .hero h1 {
-  font-size: 80px;
+  font-size: 40px;
 }
 .hero h2 {
-  font-size: 42px;
+  font-size: 22px;
 }
 .text-lead {
   font-size: 1.35em;
@@ -274,8 +274,10 @@ a.text-darkgreen:focus {
   background-color: #e6e6e6;
 }
 .theme-pretty {
-  color: #000;
-  background-color: #7fffd4;
+  background: no-repeat 50% 0 fixed;
+  background-image: url("/images/sunglasses-and-pad.jpg");
+  background-size: cover;
+  min-height: 700px;
 }
 .theme-pretty-light {
   background-color: #e6e6e6;
@@ -324,10 +326,53 @@ a.text-darkgreen:focus {
   font-size: 32px;
 }
 .title-color {
-  color: #4169e1;
+  color: #f0f0ee;
 }
 .framed {
   display: inline-block;
-  width: 280px;
+  width: 380px;
   border: solid 8px #000;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.herotag {
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+  height: 350px;
+  line-height: 420px;
+  top: 230px;
+  left: 20px;
+}
+.vert {
+  display: inline-block;
+  vertical-align: middle;
+}
+.title {
+  font-weight: 400;
+  font-size: 52px;
+  margin-bottom: 0;
+}
+.subtitle {
+  font-size: 29px;
+  margin-bottom: 0;
+}
+#stickynav {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-transition: all 0.6s ease-out;
+  -webkit-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+#stickynav.scrolled {
+  background: #444;
+  background: rgba(0,0,0,0.78);
+}
+a.navbar-brand {
+  color: #fff;
+  font-size: 20px;
+}
+.dropdown-toggle {
+  color: #000;
 }

@@ -1,190 +1,189 @@
 extends layout
 
 block styles
-	link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open Sans:300')
+		link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open Sans:300')
 
 block title
-	title Personal Computer Help
+		title Digital Coaching
 
 block content
-
-	//- hero unit
-	.hero.theme-pretty.center.spread-most
-		.pad.title-color
-			h1.title Make Your Computer Work For You
-				h2.subtitle not the other way around
-			h2.subtitle Learn modern computer and web basics 
-				br.title-linebreak
-				| in a supportive, 1-on-1 relationship 
+	//- Fixed navbar
+	<a name="topofpage"></a>
+	#stickynav.navbar.navbar-fixed-top(role='navigation')
+		.container
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+					span.sr-only Toggle navigation
+				a.navbar-brand(href='#topofpage') Digital Coaching
+			.navbar-collapse.collapse
+				ul.nav.navbar-nav.navbar-right
+					li.active
+						a.navbar-brand(href='./') Sign Up
+		//- hero unit
+	.hero.theme-pretty.spread-most
+			.pad.title-color.herotag
+					.vert
+							h1.title Make Your Computer Work For You
+									h2.subtitle not the other way around
+							h2.subtitle Learn modern computer and web basics 
+									br.title-linebreak
+									| in a supportive, 1-on-1 relationship
 
 	//- intro
 	.theme-light
-		.container-narrow.pad.vpad-lg
-			p.text-center
-				span.text-lead It can be overwhelming
-				|  to find yourself confronted by an unexpected problem when using your personal computer. Even something that should be simple, like sending a picture or a document to a friend, can often feel like a tedious and counterintuitive task.
+			.container-narrow.pad.vpad-lg
+					p.text-center
+							span.text-lead It can be overwhelming
+							|  to find yourself confronted by an unexpected problem when using your personal computer. Even something that should be simple, like sending a picture or a document to a friend, can often feel like a tedious and counterintuitive task.
 
-			p.text-center We want to help you 
-				span.text-lead feel empowered
-				| by modern technology, not intimidated by it.
+					p.text-center We want to help you 
+							span.text-lead feel empowered
+							| by modern technology, not intimidated by it.
 
 	//- format & dates
 	.theme-pale
-		.container.vpad-md
-			//- pictures
-			.row
-				.col-sm-4
-					.center.wide.space-below: div
-						img(src= "/images/" + "macorpc.jpg").framed.vcenter
-				.col-sm-4
-					.center.wide.space-below: div
-						img(src= "/images/" + "kanban.jpg").framed.vcenter
-				.col-sm-4
-					.center.wide.space-below: div
-						img(src= "/images/" + "teamrelaxation.jpg").framed
-
-			.row
-				.col-sm-4
-					.center.wide.space-below: div
-						.sprite-icon-hangouts-gray.block
-						h1.text-caption Computer Basics
-					ul.list-wide
-						li Mac or PC
-						li 
-							| Learn <em>your</em> computer.
-							.text-sm at your pace.
-				.col-sm-4
-					.visible-xs: .space-above-lg
-					.center.wide.space-below: div
-						.sprite-icon-calendar-gray.block
-						h1.text-caption Digital Organization
-					ul.list-wide
-						li Productivity Tools and Strategies
-						li Simplify your life
-							.text-sm personalized guidance to save you time, energy, and money
-				.col-sm-4
-					.visible-xs: .space-above-lg
-					.center.wide.space-below: div
-						.sprite-icon-calendar-gray.block
-						h1.text-caption Team Productivity
-					ul.list-wide
-						li Make working with others easy
-						li Collaborate using the latest tools
-							.text-sm and learn how to get the most out of your favorites like Skype, Gmail, and Facebook
+			.container.vpad-md
+					//- pictures
+					.row
+						.col-sm-6
+								.center.wide.space-below: div
+										img(src= "/images/" + "kanban.jpg").framed.vcenter
+						.col-sm-6
+								.center.wide.space-below: div
+										img(src= "/images/" + "teamrelaxation.jpg").framed
+					.row.center
+						.col-sm-6
+								.visible-xs: .space-above-lg
+								.center.wide.space-below: div
+										.sprite-icon-calendar-gray.block
+										h1.text-caption Digital Organization
+								ul.list-wide
+										ul Productivity Tools and Strategies
+										ul Simplify your life
+												.text-sm personalized guidance to save you time, energy, and money
+						.col-sm-6
+								.visible-xs: .space-above-lg
+								.center.wide.space-below: div
+										.sprite-icon-calendar-gray.block
+										h1.text-caption Team Productivity
+								ul.list-wide
+										ul Make working with others easy
+										ul Collaborate using the latest tools
+												.text-sm and learn how to get the most out of your favorites like Skype, Gmail, and Facebook
 
 
 	//- team
 	.theme-dark
-		.container-narrow.pad.vpad-md
+			.container-narrow.pad.vpad-md
 
-			.center.wide
-				h1 Learn about the team
+					.center.wide
+							h1 Learn about the team
 
-			.row.space-above-md
+					.row.space-above-md
 
-				.col-sm-6
-					.center.wide: div
-						.sprite-avatar-persona.img-circle.border-gray.block
-						h2.text-caption Team Member A
-					p.text-sm.vspace What can we say about Team Member A? I mean, what a team player. They went to school for X and worked at Y. Pretty awesome if you ask me.
+							.col-sm-6
+									.center.wide: div
+											.sprite-avatar-persona.img-circle.border-gray.block
+											h2.text-caption Team Member A
+									p.text-sm.vspace What can we say about Team Member A? I mean, what a team player. They went to school for X and worked at Y. Pretty awesome if you ask me.
 
-				.col-sm-6
-					.visible-xs: .space-above-lg
-					.center.wide: div
-						.sprite-avatar-personb.img-circle.border-gray.block
-						h2.text-caption Team Member B
-					p.text-sm.vspace If you thought Team Member A was awesome, wait until you hear about Team Member B! They went to school A and worked at B, C, and D. This person has really proven themselves in the field. You can rely on them for anything. Super reliable. Yeah. I know.
+							.col-sm-6
+									.visible-xs: .space-above-lg
+									.center.wide: div
+											.sprite-avatar-personb.img-circle.border-gray.block
+											h2.text-caption Team Member B
+									p.text-sm.vspace If you thought Team Member A was awesome, wait until you hear about Team Member B! They went to school A and worked at B, C, and D. This person has really proven themselves in the field. You can rely on them for anything. Super reliable. Yeah. I know.
 
 	//- quote
 	.theme-nature1
-		.container-narrow.pad.vpad-lg
-			.quote
-				q A quote in the bush is two in the hand.
-				br
-				| -Quoty McQuoterson
+			.container-narrow.pad.vpad-lg
+					.quote
+							q A quote in the bush is two in the hand.
+							br
+							| -Quoty McQuoterson
 
 	//- details
 	.theme-light
-		.container-narrow.pad.vpad
+			.container-narrow.pad.vpad
 
-			h1 What is A?
-			p Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+					h1 What is A?
+					p Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
-			h1 What is B?
-			p Let's get into explaining B. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+					h1 What is B?
+					p Let's get into explaining B. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
-			p Let's get into explaining B some more. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+					p Let's get into explaining B some more. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
-			h1 What is C?
-			p Let's get into explaining C. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+					h1 What is C?
+					p Let's get into explaining C. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
-			p Let's get into explaining C some more. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+					p Let's get into explaining C some more. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
-			h1 Price
-			p Choose the product that is right for you:
+					h1 Price
+					p Choose the product that is right for you:
 
-			.row
-				.col-md-4
-					h3 Level II: $50
-					p.text-sm A Level II contribution includes the base cost which covers the preparation and work put in by the facilitators, and goes beyond to help someone who has a financial need to participate.
-				.col-md-4
-					h3 Level I: $35
-					p.text-sm A Level I contribution is the base cost which covers the preparation and work put in by the facilitators.
-				.col-md-4
-					h3 Level 0: $0-34
-					p.text-sm Level 0 will be awarded upon request, no questions asked. Contribute what you can. Don’t let financial need prevent you from participating in this beneficial practice!
+					.row
+							.col-md-4
+									h3 Level II: $50
+									p.text-sm A Level II contribution includes the base cost which covers the preparation and work put in by the facilitators, and goes beyond to help someone who has a financial need to participate.
+							.col-md-4
+									h3 Level I: $35
+									p.text-sm A Level I contribution is the base cost which covers the preparation and work put in by the facilitators.
+							.col-md-4
+									h3 Level 0: $0-34
+									p.text-sm Level 0 will be awarded upon request, no questions asked. Contribute what you can. Don’t let financial need prevent you from participating in this beneficial practice!
 
 	#subscribe.theme-pale
-		.container-narrow.vpad-xl.pad
-			//- .center.wide.vpad-sm
-				h2 Registration is closed!
-			//- .center.wide
-				p.text-sm Subscribe to the mailing list to get contacted next time:
+			.container-narrow.vpad-xl.pad
+					//- .center.wide.vpad-sm
+							h2 Registration is closed!
+					//- .center.wide
+							p.text-sm Subscribe to the mailing list to get contacted next time:
 
-			//- .vpad-md
-				form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-					.row
-						.col-xs-8
-							.form-group
-								input.form-control.input-lg(type='email' placeholder='Enter Your Email' name='EMAIL' required)
-						.col-xs-4
-							div(style='position: absolute; left: -5000px;')
-								input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
-							button.btn.btn-block.btn-lg Submit
+					//- .vpad-md
+							form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+									.row
+											.col-xs-8
+													.form-group
+															input.form-control.input-lg(type='email' placeholder='Enter Your Email' name='EMAIL' required)
+											.col-xs-4
+													div(style='position: absolute; left: -5000px;')
+															input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
+													button.btn.btn-block.btn-lg Submit
 
-			.center.wide.space-above-md: div
-				h1 Starts next week!
-				p.text-sm You should get excited.
+					.center.wide.space-above-md: div
+							h1 Starts next week!
+							p.text-sm You should get excited.
 
 	//- Mailing List Signup
 	#subscribe.theme-pale.text-sm
-		.container-narrow.vpad-md.pad
-			p Can't make it this time? 
-				br.visible-xs
-				| Get contacted about next time:
-			form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-				.row
-					.col-xs-8
-						.form-group
-							input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
-					.col-xs-4
-						div(style='position: absolute; left: -5000px;')
-							input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
-						button.btn.btn-block Submit
+			.container-narrow.vpad-md.pad
+					p Can't make it this time? 
+							br.visible-xs
+							| Get contacted about next time:
+					form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+							.row
+									.col-xs-8
+											.form-group
+													input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
+									.col-xs-4
+											div(style='position: absolute; left: -5000px;')
+													input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
+											button.btn.btn-block Submit
 
 	//- footer
 	.theme-dark.text-sm
-		.container.vpad
-			.row
+			.container.vpad
+					.row
 
-				.col-md-6
-					p.nospace A special product by 
-						a.text-highlight(href='/') Some Organization
+							.col-md-6
+									p.nospace A special product by 
+											a.text-highlight(href='/') Some Organization
 
-				.col-md-6
-					.hidden-md.hidden-lg: .space-above
-					.right-sm
-						p.nospace Questions? &nbsp;&nbsp;&nbsp;
-							a(href='mailto:team-member-a@gmail.com') team-member-a@gmail.com
-							|  &middot; 
-							a(href='mailto:team-member-b@gmail.com') team-member-b@gmail.com
+							.col-md-6
+									.hidden-md.hidden-lg: .space-above
+									.right-sm
+											p.nospace Questions? &nbsp;&nbsp;&nbsp;
+													a(href='mailto:team-member-a@gmail.com') team-member-a@gmail.com
+													|  &middot; 
+													a(href='mailto:team-member-b@gmail.com') team-member-b@gmail.com
