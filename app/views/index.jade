@@ -8,17 +8,17 @@ block title
 
 block content
 	//- Fixed navbar
-	<a name="topofpage"></a>
+	.a(id='top')
 	#stickynav.navbar.navbar-fixed-top(role='navigation')
 		.container
 			.navbar-header
 				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
 					span.sr-only Toggle navigation
-				a.navbar-brand(href='#topofpage') Digital Coaching
+				a.navbar-brand(href='#top') Digital Coaching
 			.navbar-collapse.collapse
 				ul.nav.navbar-nav.navbar-right
 					li.active
-						a.navbar-brand(href='./') Sign Up
+						a.navbar-brand(href='#bottom') Sign Up
 		//- hero unit
 	.hero.theme-pretty.spread-most
 			.pad.title-color.herotag
@@ -174,8 +174,7 @@ block content
 	//- footer
 	.theme-dark.text-sm
 			.container.vpad
-					.row
-
+				.a(id='bottom')
 							.col-md-6
 									p.nospace A special product by 
 											a.text-highlight(href='/') Some Organization
