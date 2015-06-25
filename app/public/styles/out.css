@@ -11,13 +11,13 @@ body {
   font-size: 20px;
 }
 a {
-  color: #7fffd4;
+  color: #fff;
 }
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #92ffda;
-  outline-color: #92ffda;
+  color: #fff;
+  outline-color: #fff;
 }
 h1 {
   margin-top: 50px;
@@ -237,7 +237,7 @@ h5.text-caption {
   color: #b2b2b2;
 }
 .text-highlight {
-  color: #7fffd4;
+  color: #fff;
 }
 a.text-highlight:hover,
 a.text-highlight:focus {
@@ -303,24 +303,24 @@ a.text-darkgreen:focus {
   font-weight: 100;
   font-size: 24px;
   color: #000;
-  background-color: #7fffd4;
+  background-color: #000;
   border: 0;
-  border-bottom: solid 5px #6cffce;
+  border-bottom: solid 5px #000;
 }
 .btn-primary:hover {
   color: #000;
-  background-color: #92ffda;
-  border-bottom-color: #7fffd4;
+  background-color: #262626;
+  border-bottom-color: #000;
 }
 .btn-primary:active {
   color: #000;
-  border-bottom-color: #7fffd4;
+  border-bottom-color: #000;
 }
 .btn-primary:focus {
   color: #000;
-  background-color: #7fffd4;
-  border-bottom-color: #6cffce;
-  outline-color: #46ffc1;
+  background-color: #000;
+  border-bottom-color: #000;
+  outline-color: #000;
 }
 .btn-xl {
   font-size: 32px;
@@ -365,14 +365,32 @@ a.text-darkgreen:focus {
   -webkit-transition: all 0.6s ease-out;
   transition: all 0.6s ease-out;
 }
-#stickynav.scrolled {
+.navbar.scrolled {
   background: #444;
   background: rgba(0,0,0,0.78);
 }
 a.navbar-brand {
-  color: #fff;
-  font-size: 20px;
+  font-size: 18px;
 }
-.dropdown-toggle {
-  color: #000;
+#dcn {
+  margin-left: -60px;
+}
+#signup {
+  padding-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.google-spread {
+  display: inline-block;
+  width: 100px;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.web-app-spread {
+  display: inline-block;
+  width: 280px;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
 }

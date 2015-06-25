@@ -14,43 +14,104 @@ block content
 			.navbar-header
 				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
 					span.sr-only Toggle navigation
-				a.navbar-brand(href='#top') Digital Coaching
+				a.navbar-brand(id='dcn' href='#top') digital coaching network
 			.navbar-collapse.collapse
+				//- ul.nav-pages
+				//- 	a.navbar-brand Tools
+				//- 	a.navbar-brand Teams
+				//- 	a.navbar-brand About
 				ul.nav.navbar-nav.navbar-right
-					li.active
-						a.navbar-brand(href='#bottom') Sign Up
+					button.btn-primary(id='#signup')
+						a(href='#bottom') Sign Up
 		//- hero unit
 	.hero.theme-pretty.spread-most
 			.pad.title-color.herotag
 					.vert
-							h1.title Make Your Computer Work For You
-									h2.subtitle not the other way around
-							h2.subtitle Learn modern computer and web basics 
-									br.title-linebreak
-									| in a supportive, 1-on-1 relationship
+							//- h1.title Learn to use modern web technologies effectively in a supportive 1-on-1 relationship
+							h1.title Learn modern web technologies in a supportive, 1-on-1 relationship
 
 	//- intro
 	.theme-light
 			.container-narrow.pad.vpad-lg
 					p.text-center
-							span.text-lead It can be overwhelming
-							|  to find yourself confronted by an unexpected problem when using your personal computer. Even something that should be simple, like sending a picture or a document to a friend, can often feel like a tedious and counterintuitive task.
+							span.text-lead The core of our offering is empowerment.
+							|  We don't want to turn everyone into a techie, but we believe everyone can feel confident and effective using computer in the ways that are relevant to them.
 
-					p.text-center We want to help you 
-							span.text-lead feel empowered
-							| by modern technology, not intimidated by it.
+
+					p.text-center Productivity is more than getting stuff done. It's about getting 
+							|  important stuff done, with confidence and ease.
+
 
 	//- format & dates
 	.theme-pale
 			.container.vpad-md
 					//- pictures
+					//- .row
+					//- 	.col-sm-3
+					//- 			.center.wide.space-below
+					//- 				img.google-spread(src= "/images/" + "gmail_icon.png")
+					//- 	.col-sm-3
+					//- 			.center.wide.space-below
+					//- 				img.google-spread(src= "/images/" + "docs_icon.png")
+					//- 	.col-sm-3
+					//- 			.center.wide.space-below
+					//- 				img.google-spread(src= "/images/" + "google_cal_icon.png")
+					//- 	.col-sm-3
+					//- 			.center.wide.space-below
+					//- 				img.google-spread(src= "/images/" + "hangouts_icon.png")
+					//- .row.center
+					//- 	.col-sm-6
+					//- 			.visible-xs: .space-above-lg
+					//- 			.center.wide.space-below: div
+					//- 					.sprite-icon-calendar-gray.block
+					//- 					h1.text-caption Digital Organization
+					//- 			ul.list-wide
+					//- 					ul Productivity Tools and Strategies
+					//- 					ul Simplify your life
+					//- 							.text-sm personalized guidance to save you time, energy, and money
+					//- 	.col-sm-6
+					//- 			.visible-xs: .space-above-lg
+					//- 			.center.wide.space-below: div
+					//- 					.sprite-icon-calendar-gray.block
+					//- 					h1.text-caption Team Productivity
+					//- 			ul.list-wide
+					//- 					ul Make working with others easy
+					//- 					ul Collaborate using the latest tools
+					//- 							.text-sm and learn how to get the most out of your favorites like Skype, Gmail, and Facebook
+					.row.container-fluid.col-xs-offset-1
+						.col-xs-2
+								.center.wide.space-below
+										img.img-responsive.google-spread(src= "/images/" + "gmail_icon.png")
+						.col-xs-2
+								.center.wide.space-below
+										img.img-responsive.google-spread(src= "/images/" + "docs_icon.png")
+						.col-xs-2
+								.center.wide.space-below
+										img.img-responsive.google-spread(src= "/images/" + "google_cal_icon.png")
+						.col-xs-2
+								.center.wide.space-below
+										img.img-responsive.google-spread(src= "/images/" + "google_drive_icon.png")
+						.col-xs-2
+								.center.wide.space-below
+										img.img-responsive.google-spread(src= "/images/" + "hangouts_icon.png")
+					.row.center
+								.visible-xs: .space-above-lg
+
+							.center.wide.space-below: div
+									.sprite-icon-calendar-gray.block
+									h1.text-caption Organize Your Life
+							ul.list-wide.center.wide
+									ul Learn Effective Productivity Tools and Strategies
+							ul.list-wide.center.wide
+									ul Make the most out of powerful apps like Gmail, Calendar, and Drive, and discover
+											.text-sm new tools like Workflowy and Slack to organize your thoughts and rethink communication
 					.row
 						.col-sm-6
-								.center.wide.space-below: div
-										img(src= "/images/" + "kanban.jpg").framed.vcenter
+							.center.wide.space-below: div
+									img.web-app-spread(src= "/images/" + "wordpress_icon.png")
 						.col-sm-6
-								.center.wide.space-below: div
-										img(src= "/images/" + "teamrelaxation.jpg").framed
+							.center.wide.space-below: div
+									img.web-app-spread(src= "/images/" + "squarespace_icon.png")
 					.row.center
 						.col-sm-6
 								.visible-xs: .space-above-lg
@@ -70,7 +131,7 @@ block content
 										ul Make working with others easy
 										ul Collaborate using the latest tools
 												.text-sm and learn how to get the most out of your favorites like Skype, Gmail, and Facebook
-
+	
 
 	//- team
 	.theme-dark
