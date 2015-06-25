@@ -10,6 +10,23 @@ html.spread(lang='en')
 		link(rel='stylesheet' href='/styles/out.min.css')
 		block styles
 		include includes/analytics.html
+	
+	#stickynav.navbar.navbar-fixed-top(role='navigation')
+		.containter-fluid
+			.navbar-header
+				a.navbar-brand(id='dcn' href='#top') digital coaching network
+			.navbar-collapse.collapse.navbar-content
+				ul.nav.navbar-nav
+					li
+						a(href='/tools') Workflows
+					li
+						a(href='/teams') Teams
+					li
+						a(href='/about') About
+				ul.nav.navbar-right
+					button.btn-primary(id='#signup')
+						a(href='#bottom') Sign Up
+
 
 	body.spread
 		block content

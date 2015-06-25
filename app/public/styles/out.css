@@ -328,14 +328,6 @@ a.text-darkgreen:focus {
 .title-color {
   color: #f0f0ee;
 }
-.framed {
-  display: inline-block;
-  width: 380px;
-  border: solid 8px #000;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
-}
 .herotag {
   position: relative;
   box-sizing: border-box;
@@ -372,13 +364,13 @@ a.text-darkgreen:focus {
 a.navbar-brand {
   font-size: 18px;
 }
-#dcn {
-  margin-left: -60px;
+.navbar-content {
+  margin-left: 20px;
 }
 #signup {
-  padding-top: -10px;
   box-sizing: border-box;
   position: relative;
+  border-radius: 15px 50px 30px;
 }
 .google-spread {
   display: inline-block;
