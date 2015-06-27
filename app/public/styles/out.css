@@ -305,7 +305,7 @@ a.text-darkgreen:focus {
 }
 .btn-primary {
   font-weight: 100;
-  font-size: 24px;
+  font-size: 22px;
   color: #000;
   background-color: #000;
   border: 0;
@@ -371,10 +371,18 @@ a.navbar-brand {
 .navbar-content {
   margin-left: 20px;
 }
+#nav-middle {
+  margin-left: 90px;
+}
+#nav-middle li {
+  padding: 0 8px 0 0;
+}
 #signup {
   box-sizing: border-box;
   position: relative;
-  border-radius: 15px 50px 30px;
+  padding: 0 7px 0;
+  margin: 3px 5px;
+  border-radius: 30px 30px 30px 30px;
 }
 .google-spread {
   display: inline-block;
