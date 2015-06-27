@@ -391,6 +391,10 @@ a.navbar-brand {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
+#img-devices {
+  display: inline-block;
+  width: 150px;
+}
 .web-app-spread {
   display: inline-block;
   width: 280px;
