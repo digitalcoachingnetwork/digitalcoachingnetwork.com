@@ -8,12 +8,12 @@ block title
 
 block content
 	//- Fixed navbar id allows for anchor tag scroll
-	.a(id='top')
-		//- hero unit
+	#top
+
+	//- hero unit
 	.hero.theme-pretty.spread-most
 			.pad.title-color.herotag
 					.vert
-							//- h1.title Learn to use modern web technologies effectively in a supportive 1-on-1 relationship
 							h1.title Learn modern web technologies in a supportive, 1-on-1 relationship
 
 	//- intro
@@ -137,19 +137,14 @@ block content
 					h1 Price
 					p Since this is a new offering, we are determining our pricing structure. It will most likely be between $50-100 for a 1hr session.
 
-	#subscribe.theme-pale
-			.container-narrow.vpad.pad
-
-					.center.wide.space-above-md: div
-							h1 Interested in learning more?
-							p.text-sm Enter your email and we will contact you to talk next steps. We won't send you unsolicited emails.
-
 	//- Mailing List Signup
-	#subscribe.theme-pale.text-sm
-			.container-narrow.vpad-md.pad
-					p Can't make it this time? 
-							br.visible-xs
-							| Get contacted about next time:
+	#subscribe.theme-pale
+			.container-narrow.vpad-lg.pad
+
+					.center.wide: div
+							h1 Interested in learning more?
+							p.text-sm Enter your email and we will contact you promptly. We won't send you unsolicited emails.
+
 					form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
 							.row
 									.col-xs-8
