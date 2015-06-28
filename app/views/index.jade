@@ -7,22 +7,8 @@ block title
 		title Digital Coaching
 
 block content
-	//- Fixed navbar
+	//- Fixed navbar id allows for anchor tag scroll
 	.a(id='top')
-	#stickynav.navbar.navbar-fixed-top(role='navigation')
-		.container
-			.navbar-header
-				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-					span.sr-only Toggle navigation
-				a.navbar-brand(id='dcn' href='#top') digital coaching network
-			.navbar-collapse.collapse
-				//- ul.nav-pages
-				//- 	a.navbar-brand Tools
-				//- 	a.navbar-brand Teams
-				//- 	a.navbar-brand About
-				ul.nav.navbar-nav.navbar-right
-					button.btn-primary(id='#signup')
-						a(href='#bottom') Sign Up
 		//- hero unit
 	.hero.theme-pretty.spread-most
 			.pad.title-color.herotag
@@ -49,15 +35,15 @@ block content
 					.row.space-above-md
 
 							.col-sm-6
-									h2.text-center.space-below Email
+									h2.text-center.space-below Email Organization
 									.center.wide.space-below: div
-											img(src= "/images/gmail_icon.png" width="150")
+											img(src= "/images/gmail_icon.png" height="110")
 									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
 							.col-sm-6
-									h2.text-center.space-below Todo
+									h2.text-center.space-below Todo Lists
 									.center.wide.space-below: div
-											img(src= "/images/wunderlist.png" width="150")
+											img(src= "/images/wunderlist_icon.png" height="110")
 									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
 					.row.space-above-md
@@ -69,7 +55,7 @@ block content
 									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
 							.col-sm-6
-									h2.text-center.space-below Calendar
+									h2.text-center.space-below Calendar Management
 									.center.wide.space-below: div
 											img(src= "/images/google_cal_icon.png" width="150")
 									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
@@ -77,7 +63,7 @@ block content
 					.row.space-above-md
 
 							.col-sm-6
-									h2.text-center.space-below Files
+									h2.text-center.space-below Cloud File Management
 									.center.wide.space-below: div
 											img(src= "/images/docs_icon.png" width="150")
 									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
@@ -85,8 +71,9 @@ block content
 							.col-sm-6
 									h2.text-center.space-below Operating System
 									.center.wide.space-below: div
-											img(src= "/images/apple.png" width="150")
-											img(src= "/images/windows8.png" width="150")
+											.proxy
+												img#apple-logo(src= "/images/apple_icon.png" height="150")
+											img#windows-logo(src= "/images/windows8_icon.png" height="150")
 									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
 
 					.center.wide.space-above-lg
