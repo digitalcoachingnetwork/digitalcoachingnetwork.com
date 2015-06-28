@@ -162,6 +162,9 @@ sizes(space-below, margin-bottom)
 	line-height 2em
 	margin 0
 
+.nowrap
+	white-space nowrap
+
 .text-caption
 	font-size 16px
 	text-transform uppercase
@@ -334,38 +337,45 @@ a.text-darkgreen
 	z-index 1
 
 #stickynav
-	// background-color transparent
-	font-family 'Open Sans', sans-serif
-	-webkit-transition all 0.6s ease-out
-	-moz-transition all 0.6s ease-out
-	-o-transition all 0.6s ease-out
-	-ms-transition all 0.6s ease-out
 	transition all 0.6s ease-out
 
 .navbar.scrolled
 	background rgb(68, 68, 68) //IE
-	background rgba(0, 0, 0, 0.78) //NON-IE
+	background rgba(0, 0, 0, 0.7) //NON-IE
 	// opacity 0.2
 
 a.navbar-brand
-	// color white
-	font-size 18px
+	font-size 16px
 
 .navbar-content
-	margin-left 20px
+	font-size 16px
+	margin-left: 23%
 
-#nav-middle
-	margin-left 90px
-	li
-		padding 0 8px 0 0
+.navbar-right
+	padding-top 9px
 
-#signup
-	// padding-top -10px
-	box-sizing border-box
-	position relative
-	padding 0 7px 0
-	margin 3px 5px
-	border-radius 30px 30px 30px 30px
+.navbar-fixed-top
+	border none
+
+// .nav > li > a
+// 	border-bottom solid 2px transparent
+
+.navbar-content .nav > li > a:hover, .navbar-content .nav > li > a:focus
+	background-color transparent
+	border-bottom solid 2px white
+	padding-bottom 13px
+
+.btn-action
+	padding .2em .5em
+	font-size 16px
+	text-transform uppercase
+	border none
+
+.navbar .btn-action
+	background black
+
+.navbar.scrolled .btn-action
+	background transparent
 
 .google-spread
 	display inline-block

@@ -12,20 +12,25 @@ html.spread(lang='en')
 		include includes/analytics.html
 	
 	#stickynav.navbar.navbar-fixed-top(role='navigation')
-		.containter-fluid
-			.navbar-header
-				a.navbar-brand(href='#top') digital coaching network
-			.navbar-collapse.collapse.navbar-content
-				#nav-middle.ul.nav.navbar-nav
-					li
-						a(href='/workflows') Workflows
-					li
-						a(href='/teams') Teams
-					li
-						a(href='/about') About
-				ul.nav.navbar-right
-					#signup.btn-primary
-						a(href='#bottom') Sign Up
+		.container-fluid
+			.row
+				.col-sm-2
+					.navbar-header
+						a.navbar-brand.nowrap(href='#top') digital coaching network
+				.col-sm-5
+					.navbar-collapse.collapse.navbar-content
+							ul.nav.navbar-nav
+								li
+									a(href='/workflows') Workflows
+								li
+									a(href='/teams') Teams
+								li
+									a(href='/about') About
+
+				.col-sm-5
+						.nav.navbar-right
+							.btn-action.btn-primary
+								a.vert(href='#bottom') Sign Up
 
 
 	body.spread
