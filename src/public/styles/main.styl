@@ -354,17 +354,20 @@ a.text-darkgreen
 
 .navbar-content
 	font-size 16px
-	margin-left 3%
 
 .navbar-transparent
 	background-color transparent
 	border none
 
-	.navbar-toggle
+	.navbar-nav
+		margin-left 3%
+
+	.navbar-toggle, .navbar-collapse
 		border none
+		box-shadow none
 
 	.navbar-brand
-		font-size 16px
+		font-size 14px
 		&, &:hover, &:focus
 			color white
 
@@ -373,16 +376,17 @@ a.text-darkgreen
 		&:hover, &:focus
 			color white
 			background-color transparent
-			border-bottom solid 2px white
-			padding-bottom 13px
+			@media (min-width: width-xs)
+				border-bottom solid 2px white
+				padding-bottom 13px
 
 .btn-action
 	transition all 0.6s ease-out
 	font-size 16px
-	text-transform uppercase
 	background transparent
 	border none
 	opacity 0
+	text-transform uppercase
 
 .navbar.scrolled .btn-action
 	opacity 100
