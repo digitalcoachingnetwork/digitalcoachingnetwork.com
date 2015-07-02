@@ -316,9 +316,15 @@ a.text-darkgreen:focus {
 }
 .sprite-avatar-raine.img-circle {
   background-image: url("/images/raine.jpg");
+  background-size: cover;
+  width: 250px;
+  height: 250px;
 }
 .sprite-avatar-robin.img-circle {
   background-image: url("/images/robin.jpg");
+  background-size: cover;
+  width: 250px;
+  height: 250px;
 }
 .btn-primary {
   font-weight: 100;
