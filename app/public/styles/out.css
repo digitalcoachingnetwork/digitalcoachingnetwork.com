@@ -309,16 +309,16 @@ a.text-darkgreen:focus {
   min-height: 700px;
 }
 .theme-signup {
-  background: no-repeat scroll;
+  background: 50% 0 no-repeat scroll;
   background-image: url("/images/two_computers.jpg");
-  height: 80%;
-  background-size: 100%;
+  min-height: 80%;
+  background-size: cover;
 }
-.sprite-avatar-persona.img-circle {
-  background-position: -6px -403px;
+.sprite-avatar-raine.img-circle {
+  background-image: url("/images/raine.jpg");
 }
-.sprite-avatar-personb.img-circle {
-  background-position: -6px -200px;
+.sprite-avatar-robin.img-circle {
+  background-image: url("/images/robin.jpg");
 }
 .btn-primary {
   font-weight: 100;
