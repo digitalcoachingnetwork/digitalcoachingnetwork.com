@@ -11,7 +11,7 @@ block content
 	#top
 
 	//- hero unit
-	.hero.theme-pretty.spread-most
+	.hero.theme-pretty.spread
 			.pad.title-color.herotag
 					.vert
 							h1.title Learn modern web technologies in a supportive, 1-on-1 relationship
@@ -143,22 +143,22 @@ block content
 					p Since this is a new offering, we are determining our pricing structure. It will most likely be between $50-100 for a 1hr session.
 
 	//- Mailing List Signup
-	#subscribe.theme-pale
+	#subscribe.theme-signup
 			.container-narrow.vpad-lg.pad
 
-					.center.wide: div
+					.center.wide.learn-more: div
 							h1 Interested in learning more?
 							p.text-sm Enter your email and we will contact you promptly. We won't send you unsolicited emails.
 
-					form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-							.row
-									.col-xs-8
-											.form-group
-													input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
-									.col-xs-4
-											div(style='position: absolute; left: -5000px;')
-													input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
-											button.btn.btn-block Submit
+							form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+									.row
+											.col-xs-8
+													.form-group
+															input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
+											.col-xs-4
+													div(style='position: absolute; left: -5000px;')
+															input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
+													button.btn.btn-block Submit
 
 	//- footer
 	.theme-dark.text-sm
