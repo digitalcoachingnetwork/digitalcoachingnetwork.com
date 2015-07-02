@@ -245,7 +245,7 @@ a.text-darkgreen
 
 .theme-highlight
 	background-color lighten(aquamarine, 75%)
-	
+
 .theme-pretty
 	// color black
 	// background-color aquamarine
@@ -344,38 +344,40 @@ a.text-darkgreen
 	background rgba(0, 0, 0, 0.7) //NON-IE
 	// opacity 0.2
 
-a.navbar-brand
-	font-size 16px
-
 .navbar-content
 	font-size 16px
-	margin-left: 23%
+	margin-left 3%
 
-.navbar-right
-	padding-top 9px
-
-.navbar-fixed-top
+.navbar-transparent
+	background-color transparent
 	border none
 
-// .nav > li > a
-// 	border-bottom solid 2px transparent
+	&.scrolled .navbar-toggle
+		border none
 
-.navbar-content .nav > li > a:hover, .navbar-content .nav > li > a:focus
-	background-color transparent
-	border-bottom solid 2px white
-	padding-bottom 13px
+	.navbar-brand
+		font-size 16px
+		&, &:hover, &:focus
+			color white
+
+	.nav > li > a
+		color white
+		&:hover, &:focus
+			color white
+			background-color transparent
+			border-bottom solid 2px white
+			padding-bottom 13px
 
 .btn-action
-	padding .2em .5em
+	transition all 0.6s ease-out
 	font-size 16px
 	text-transform uppercase
+	background transparent
 	border none
-
-.navbar .btn-action
-	background black
+	opacity 0
 
 .navbar.scrolled .btn-action
-	background transparent
+	opacity 100
 
 .google-spread
 	display inline-block
@@ -403,7 +405,7 @@ a.navbar-brand
 // .quotebox
 // 	background-color black
 // 	opacity 0.2
-	
+
 .darken
 	color black
 	opacity 0.2
@@ -412,6 +414,6 @@ a.navbar-brand
 	right 0
 	top 0
 	bottom 0
-	
+
 .relative
 	position relative

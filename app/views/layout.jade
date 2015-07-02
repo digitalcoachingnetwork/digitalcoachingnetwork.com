@@ -5,38 +5,37 @@ html.spread(lang='en')
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		block title
 
-		link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+		link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
 		link(rel='stylesheet' href="http://code.jquery.com/ui/1.10.4/themes/black-tie/jquery-ui.css")
 		link(rel='stylesheet' href='/styles/out.min.css')
 		block styles
 		include includes/analytics.html
 	
-	#stickynav.navbar.navbar-fixed-top(role='navigation')
+	nav#stickynav.navbar.navbar-default.navbar-transparent.navbar-fixed-top(role='navigation')
 		.container-fluid
-			.row
-				.col-sm-2
-					.navbar-header
-						a.navbar-brand.nowrap(href='#top') digital coaching network
-				.col-sm-5
-					.navbar-collapse.collapse.navbar-content
-							ul.nav.navbar-nav
-								li
-									a(href='/workflows') Workflows
-								li
-									a(href='/teams') Teams
-								li
-									a(href='/about') About
-
-				.col-sm-5
-						.nav.navbar-right
-							.btn-action.btn-primary
-								a.vert(href='#bottom') Sign Up
-
+			.navbar-header
+				a.navbar-brand.nowrap(href='#top') digital coaching network
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#main-navbar-collapse', aria-expanded='false')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+			.collapse.navbar-collapse(id='main-navbar-collapse')
+				ul.nav.navbar-nav.navbar-content
+					li
+						a(href='/workflows') Workflows
+					li
+						a(href='/teams') Teams
+					li
+						a(href='/about') About
+				ul.nav.navbar-nav.navbar-right
+					li
+						a.btn-action.btn-primary(href='#bottom') Sign Up
 
 	body.spread
 		block content
 
 	block scripts
 		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-		script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+		script(src='//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
 		script(src='/javascripts/index.js')
