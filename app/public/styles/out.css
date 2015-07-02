@@ -303,10 +303,16 @@ a.text-darkgreen:focus {
   background-color: #dffff4;
 }
 .theme-pretty {
-  background: no-repeat 50% 0 fixed;
+  background: no-repeat fixed;
   background-image: url("/images/sunglasses-and-pad.jpg");
   background-size: cover;
   min-height: 700px;
+}
+.theme-signup {
+  background: no-repeat scroll;
+  background-image: url("/images/two_computers.jpg");
+  height: 80%;
+  background-size: 100%;
 }
 .sprite-avatar-persona.img-circle {
   background-position: -6px -403px;
@@ -454,10 +460,10 @@ a.navbar-brand {
   top: 115px;
 }
 .darken {
-  color: #000;
-  opacity: 0.2;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
+  background-color: #000;
+  opacity: 0.25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: alpha(opacity=25);
   position: absolute;
   left: 0;
   right: 0;
@@ -466,4 +472,13 @@ a.navbar-brand {
 }
 .relative {
   position: relative;
+}
+.learn-more {
+  position: relative;
+  padding: 15px;
+  color: #fff;
+  background-color: #000;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
 }
