@@ -43,8 +43,9 @@ ul {
 }
 .hero h1,
 .hero h2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
-  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 200;
   margin-top: 20px;
 }
 .hero h1 {
