@@ -51,12 +51,12 @@ p, ul
 
 .quote
 	font-family 'Helvetica Neue', Helvetica, Arial, Sans-Serif
+	-webkit-font-smoothing antialiased
 	font-size 32px
-	font-weight 100
+	font-weight 200
 
 .hero
 	h1,h2
-		// font-family 'Helvetica Neue', Helvetica, Arial, Sans-Serif
 		font-family "Helvetica Neue",Helvetica,Arial,sans-serif
 		-webkit-font-smoothing antialiased
 		font-weight 200
@@ -223,15 +223,18 @@ a.text-darkgreen
 .theme-pretty
 	// color black
 	// background-color aquamarine
+	// background no-repeat center center fixed
 	background no-repeat 50% 0 fixed
 	background-image url(/images/sunglasses-and-pad.jpg)
 	background-size cover
 	min-height 700px
+	// background-position center center
+	// background-repeat no-repeat
+	// background-size 100% auto
 	// imageWidth = 990px
-	// @media (min-width: imageWidth)
 	// 	background-image url(/images/www/nature-river@2x.jpg)
 	// 	background-size 100%
-
+			
 .theme-pretty-light
 	background-color gray(90)
 
@@ -247,18 +250,6 @@ a.text-darkgreen
 
 .theme-highlight
 	background-color lighten(aquamarine, 75%)
-
-.theme-pretty
-	// color black
-	// background-color aquamarine
-	background no-repeat fixed
-	background-image url(/images/sunglasses-and-pad.jpg)
-	background-size cover
-	min-height 700px
-	// imageWidth = 990px
-	// @media (min-width: imageWidth)
-	// 	background-image url(/images/www/nature-river@2x.jpg)
-	// 	background-size 100%
 
 .theme-signup
 	background 50% 0 no-repeat scroll

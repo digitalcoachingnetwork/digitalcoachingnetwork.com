@@ -38,8 +38,9 @@ ul {
 }
 .quote {
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 32px;
-  font-weight: 100;
+  font-weight: 200;
 }
 .hero h1,
 .hero h2 {
@@ -302,12 +303,6 @@ a.text-darkgreen:focus {
 }
 .theme-highlight {
   background-color: #dffff4;
-}
-.theme-pretty {
-  background: no-repeat fixed;
-  background-image: url("/images/sunglasses-and-pad.jpg");
-  background-size: cover;
-  min-height: 700px;
 }
 .theme-signup {
   background: 50% 0 no-repeat scroll;
