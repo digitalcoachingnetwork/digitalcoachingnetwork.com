@@ -22,9 +22,7 @@ filter =       require 'gulp-filter'
 ngAnnotate =   require 'gulp-ng-annotate'
 del =          require 'del'
 open =         require 'open'
-lr =           require 'tiny-lr'
 
-server = lr()
 notifyOnError = notify.onError("<%= error.message %>")
 
 config =
@@ -58,8 +56,10 @@ config =
 gulp.task 'styles', ->
 	css = gulp.src(config.srcCss)
 	stylusStream = gulp.src(config.srcStylus)
+		.pipe(plumber(errorHandler: notifyOnError))
 		.pipe(stylus({use: [nib()]}))
 	sassStream = gulp.src(config.srcSass)
+		.pipe(plumber(errorHandler: notifyOnError))
 		.pipe(sass(indentedSyntax: true))
 
 	es.merge(css, sassStream, stylusStream)
@@ -114,11 +114,21 @@ gulp.task 'clean', (cb)->
 		'app/public/scripts/*.js'
 	], cb)
 
+# build
+gulp.task 'build', (cb)->
+	runSequence 'clean', [
+		# 'plugins'
+		'clientScripts'
+		'serverScripts'
+		'styles'
+		# 'images'
+	], cb
+
 # site launcher
 gulp.task 'open', ->
 	open 'http://localhost:' + config.httpPort
 
-gulp.task 'watch', (callback) ->
+gulp.task 'watch', (cb) ->
 
 	gulp.watch([config.srcCss, config.srcSass, config.srcStylus], ['styles'])._watcher.on 'all', livereload
 	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
@@ -127,7 +137,7 @@ gulp.task 'watch', (callback) ->
 	# gulp.watch(config.srcImg, ['images'])._watcher.on 'all', livereload
 
 # default task -- run 'gulp' from cli
-gulp.task 'default', (callback) ->
+gulp.task 'default', (cb) ->
 
 	runSequence 'clean', [
 		# 'plugins'
@@ -135,7 +145,7 @@ gulp.task 'default', (callback) ->
 		'serverScripts'
 		'styles'
 		# 'images'
-	], 'watch', callback
+	], 'watch', cb
 
-	server.listen config.livereloadPort
+	livereload.listen config.livereloadPort
 
