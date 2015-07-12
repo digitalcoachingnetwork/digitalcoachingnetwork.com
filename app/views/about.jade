@@ -1,0 +1,81 @@
+extends layout
+
+block styles
+		link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open Sans:300')
+
+block title
+		title Digital Coaching
+
+block content
+
+	nav#stickynav.navbar.navbar-default.navbar-transparent.navbar-fixed-top(role='navigation')
+		.container-fluid
+			.navbar-header
+				a.navbar-brand.nowrap(href='/') digital coaching network
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#main-navbar-collapse', aria-expanded='false')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+			.collapse.navbar-collapse(id='main-navbar-collapse')
+				ul.nav.navbar-nav.navbar-content
+					li
+						a(href='/workflows') Workflows
+					li
+						a(href='/teams') Teams
+					li
+						a(href='/about') About
+					li.visible-xs
+						a(href='#bottom') Sign Up
+				ul.nav.navbar-nav.navbar-right
+					li.hidden-xs
+						a.btn-action.btn-primary(href='#bottom') Sign Up
+
+	//- details
+	.theme-about
+			.container-narrow.pad.vpad.darken-relative
+					h1 Our Philosophy
+					p Let's get into explaining B. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+
+					p Let's get into explaining B some more. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+
+					h1 Next steps
+					p Let's get into explaining B. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+
+					p Let's get into explaining B some more. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+
+					h1 Price
+					p S
+
+	//- Mailing List Signup
+	#subscribe.theme-light
+			.container-narrow.vpad-lg.pad
+					.center.wide
+							.learn-more
+									h1 Interested in learning more?
+									p.text-sm Enter your email and we will contact you promptly. We won't send you unsolicited emails.
+
+									form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+											.row
+													.col-xs-8
+															.form-group
+																	input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
+													.col-xs-4
+															div(style='position: absolute; left: -5000px;')
+																	input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
+															button.btn.btn-block Submit
+
+	//- footer
+	.theme-dark.text-sm
+			.container.vpad
+				.a(id='bottom')
+							.col-md-6
+									p.nospace Thanks for stopping by :)
+
+							.col-md-6
+									.hidden-md.hidden-lg: .space-above
+									.right-sm
+											p.nospace Questions? &nbsp;&nbsp;&nbsp;
+													a(href='mailto:raine@digitalcoachingnetwork.com') raine@digitalcoachingnetwork.com
+													|  &middot; 
+													a(href='mailto:robin@digitalcoachingnetwork.com') robin@digitalcoachingnetwork.com

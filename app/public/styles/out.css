@@ -310,6 +310,12 @@ a.text-darkgreen:focus {
   min-height: 80%;
   background-size: cover;
 }
+.theme-about {
+  background: 50% 0 no-repeat scroll;
+  background-position: 0 60px;
+  background-size: cover;
+  color: #fff;
+}
 .sprite-avatar-raine.img-circle {
   background-image: url("/images/raine.jpg");
   background-size: cover;
@@ -484,7 +490,7 @@ a.text-darkgreen:focus {
   line-height: 420px;
   top: 115px;
 }
-.darken {
+.darken-absolute {
   background-color: #000;
   opacity: 0.25;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
@@ -494,6 +500,10 @@ a.text-darkgreen:focus {
   right: 0;
   top: 0;
   bottom: 0;
+}
+.darken-relative {
+  background-color: rgba(0,0,0,0.25);
+  position: relative;
 }
 .relative {
   position: relative;
