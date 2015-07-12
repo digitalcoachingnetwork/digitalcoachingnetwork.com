@@ -9,29 +9,10 @@ block title
 block content
 	//- Fixed navbar id allows for anchor tag scroll
 	#top
-
-	nav#stickynav.navbar.navbar-default.navbar-transparent.navbar-fixed-top(role='navigation')
-		.container-fluid
-			.navbar-header
-				a.navbar-brand.nowrap(href='#top') digital coaching network
-				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#main-navbar-collapse', aria-expanded='false')
-					span.sr-only Toggle navigation
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-			.collapse.navbar-collapse(id='main-navbar-collapse')
-				ul.nav.navbar-nav.navbar-content
-					li
-						a(href='/workflows') Workflows
-					li
-						a(href='/teams') Teams
-					li
-						a(href='/about') About
-					li.visible-xs
-						a(href='#bottom') Sign Up
-				ul.nav.navbar-nav.navbar-right
-					li.hidden-xs
-						a.btn-action.btn-primary(href='#bottom') Sign Up
+	//- refactor navbar as mixin
+	//- +navbar()
+	include mixins/navbar.jade
+	+navbar()
 
 	//- hero unit
 	.hero.theme-pretty.relative
@@ -61,13 +42,13 @@ block content
 									h2.text-center.space-below Email Organization
 									.center.wide.space-below: div
 											img(src= "/images/gmail_icon.png" height="110")
-									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+									p.text-sm When your email is well-organized, and you have a system for checking and categorizing incoming email, you will feel increasingly relaxed and confident about being on top of all your communications. It is a great feeling to have everything accounted for and know that no one in your life has been left hanging. It also feels great to have faith in finding any past email.
 
 							.col-sm-6
 									h2.text-center.space-below Todo Lists
 									.center.wide.space-below: div
 											img(src= "/images/wunderlist_icon.png" height="110")
-									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+									p.text-sm Many people try using a todo list app, add all their todo items, only to find themselves returning to pen and paper after the todo app sits unused for weeks. Why does this happen? It is possible that their todo app is not the best. What is more likely, however, is that they simply have not found an effective workflow.
 
 					.row.space-above-md
 
@@ -75,7 +56,7 @@ block content
 									h2.text-center.space-below Wordpress
 									.center.wide.space-below: div
 											img(src= "/images/wordpress_icon.png" width="150")
-									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+									p.text-sm A Wordpress site is a website that lets anyone to add and edit content on their website with a simple visual editor. Wordpress is well-known as a blogging platform, but it can just as easily be used to create normal websites that consist of several pages of static content. Wordpress has been around for a while, which means that if you run into a problem, chances are someone else has as well, and has posted a solution online. There are also many great customizations available.
 
 							.col-sm-6
 									h2.text-center.space-below Calendar Management
@@ -89,7 +70,7 @@ block content
 									h2.text-center.space-below Cloud File Management
 									.center.wide.space-below: div
 											img(src= "/images/docs_icon.png" width="150")
-									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+									p.text-sm When it comes to organization, files or anything else in life, it helps to understand the space in which you are categorizing and organizing your content. Just as a closet might have shelves, hooks, and drawers to store different types of clothes in, your hard drive is optimized for organizing different types of files. The question is how to go about storing all of them for quick, intuitive access.
 
 							.col-sm-6
 									h2.text-center.space-below Operating System
@@ -97,7 +78,7 @@ block content
 											.proxy
 												img#apple-logo(src= "/images/apple_icon.png" height="150")
 											img#windows-logo(src= "/images/windows8_icon.png" height="150")
-									p.text-sm Let's get into explaining A. It's gonna take a while. There really is a lot to it, but I will make it easy to understand. It's just a matter of breaking down the complex parts into simple parts. I will explain the simple parts and then you will understand the complex parts. That's how this works. Keep reading. You don't understand it. But you will. Trust yourself.
+									p.text-sm We all have that friend, the “computer guy” who just seems to understand what they’re doing when they sit down in front of a monitor. Their demeanor seems calm and relaxed, while they solve a problem you’ve been struggling with for hours with effort and ease. Wouldn’t it be nice to feel that level of confidence you experience in other areas of your life, without having to “get” computers?
 
 					.center.wide.space-above-lg
 							h1 Other Tools

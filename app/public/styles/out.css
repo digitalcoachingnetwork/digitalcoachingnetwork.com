@@ -316,6 +316,9 @@ a.text-darkgreen:focus {
   background-size: cover;
   color: #fff;
 }
+.margin-about {
+  overflow: hidden;
+}
 .sprite-avatar-raine.img-circle {
   background-image: url("/images/raine.jpg");
   background-size: cover;

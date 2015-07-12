@@ -1,0 +1,23 @@
+mixin navbar()
+	nav#stickynav.navbar.navbar-default.navbar-transparent.navbar-fixed-top(role='navigation')
+		.container-fluid
+			.navbar-header
+				a.navbar-brand.nowrap(href='#top') digital coaching network
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#main-navbar-collapse', aria-expanded='false')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+			.collapse.navbar-collapse(id='main-navbar-collapse')
+				ul.nav.navbar-nav.navbar-content
+					li
+						a(href='/workflows') Workflows
+					li
+						a(href='/teams') Teams
+					li
+						a(href='/about') About
+					li.visible-xs
+						a(href='#bottom') Sign Up
+				ul.nav.navbar-nav.navbar-right
+					li.hidden-xs
+						a.btn-action.btn-primary(href='#bottom') Sign Up
