@@ -454,6 +454,9 @@ a.text-darkgreen:focus {
   position: relative;
   z-index: 2000;
 }
+.background-purple {
+  background-color: #902375;
+}
 .btn-action {
   -webkit-transition: all 0.6s ease-out;
   transition: all 0.6s ease-out;
