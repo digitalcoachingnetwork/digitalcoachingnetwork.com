@@ -69,7 +69,7 @@ gulp.task 'styles', ->
 		.pipe(rename(suffix: '.min'))
 		.pipe(minifycss())
 		.pipe(gulp.dest(config.destCss))
-		.pipe livereload(server, auto:false)
+		.pipe livereload(auto:false)
 
 # compile client-side coffeescript, concat, & minify js
 gulp.task 'clientScripts', ->
@@ -82,7 +82,7 @@ gulp.task 'clientScripts', ->
 		.pipe(rename(suffix: '.min'))
 		.pipe(uglify())
 		.pipe(gulp.dest(config.destClientScripts))
-		.pipe livereload(server, auto:false)
+		.pipe livereload(auto:false)
 
 # compile server-side coffeescript
 gulp.task 'serverScripts', ->
@@ -97,7 +97,7 @@ gulp.task 'serverScripts', ->
 
 	es.merge(js, compiledCoffee)
 		.pipe(gulp.dest(config.destServerScripts))
-		.pipe livereload(server, auto:false)
+		.pipe livereload(auto:false)
 
 # minify images
 # gulp.task 'images', ->
@@ -124,6 +124,10 @@ gulp.task 'build', (cb)->
 		# 'images'
 	], cb
 
+# gulp.task 'views', (cb)->
+# 	livereload(auto:false)
+# 	cb();
+
 # site launcher
 gulp.task 'open', ->
 	open 'http://localhost:' + config.httpPort
@@ -133,7 +137,7 @@ gulp.task 'watch', (cb) ->
 	gulp.watch([config.srcCss, config.srcSass, config.srcStylus], ['styles'])._watcher.on 'all', livereload
 	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
 	gulp.watch([config.srcAllJs, config.srcAllCoffee, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
-	gulp.watch(config.views)._watcher.on 'all', livereload
+	# gulp.watch([config.views], ['views'])._watcher.on 'all', livereload
 	# gulp.watch(config.srcImg, ['images'])._watcher.on 'all', livereload
 
 # default task -- run 'gulp' from cli

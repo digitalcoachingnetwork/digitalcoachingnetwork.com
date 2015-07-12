@@ -10,6 +10,29 @@ block content
 	//- Fixed navbar id allows for anchor tag scroll
 	#top
 
+	nav#stickynav.navbar.navbar-default.navbar-transparent.navbar-fixed-top.theme-dark(role='navigation')
+		.container-fluid
+			.navbar-header
+				a.navbar-brand.nowrap(href='#top') digital coaching network
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#main-navbar-collapse', aria-expanded='false')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+			.collapse.navbar-collapse(id='main-navbar-collapse')
+				ul.nav.navbar-nav.navbar-content
+					li
+						a(href='/workflows') Workflows
+					li
+						a(href='/teams') Teams
+					li
+						a(href='/about') About
+					li.visible-xs
+						a(href='#bottom') Sign Up
+				ul.nav.navbar-nav.navbar-right
+					li.hidden-xs
+						a.btn-action.btn-primary(href='#bottom') Sign Up
+
 	//- hero unit
 	.hero.theme-pretty.relative
 				.vpad.title-color.herotag
@@ -115,7 +138,7 @@ block content
 									p.text-sm.vspace Robin graduated from the 2nd cohort at RefactorU. I am thrilled to be working with him. This is the first time I have not done a business solo, and going into it I knew that I wanted a cofounder who I connected with personally and respected for their personal beliefs, values, and presence. Robin has an amazing ability to stay embodied and kindhearted even when entangled in the headiest tech problems—it’s one of the many things I love about him!
 
 	.theme-quote.relative
-				.darken
+				.darken-absolute
 				.vpad.title-color.quotetag
 						.col-md-5.col-md-offset-7.center
 								h1.quote Our core offering is empowerment. We believe everyone can feel confident and effective using a computer.

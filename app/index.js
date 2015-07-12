@@ -1,11 +1,13 @@
 (function() {
-  var app, bodyParser, express, indexController, server;
+  var aboutController, app, bodyParser, express, indexController, server;
 
   express = require('express');
 
   bodyParser = require('body-parser');
 
   indexController = require('./controllers/index.js');
+
+  aboutController = require('./controllers/about.js');
 
   require('newrelic');
 
@@ -22,6 +24,8 @@
   }));
 
   app.get('/', indexController.index);
+
+  app.get('/about', aboutController.about);
 
   server = app.listen(process.env.PORT || 9882, function() {
     return console.log('Express server listening on port ' + server.address().port);
