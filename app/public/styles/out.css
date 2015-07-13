@@ -450,6 +450,9 @@ a.text-darkgreen:focus {
     padding-bottom: 13px;
   }
 }
+.icon-bar {
+  background-color: #fff;
+}
 .above-navbar {
   position: relative;
   z-index: 2000;
