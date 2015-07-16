@@ -95,12 +95,12 @@ block content
 
 
 	//- team
-	.theme-dark
+	.theme-dark-color
 
 			.container-narrow.pad.vpad-md
 
 			.container-narrow.center.wide
-					h1.above-navbar.background-purple Learn about the team
+					h1.above-navbar Learn about the team
 	
 			.container-narrow.pad.vpad-md
 					.row.space-above-md
@@ -141,26 +141,26 @@ block content
 					p Since this is a new offering, we are determining our pricing structure. It will most likely be between $50-100 for a 1hr session.
 
 	//- Mailing List Signup
-	#subscribe.theme-signup
-			.container-narrow.vpad-lg.pad
-					.center.wide
-							.learn-more
-									h1 Interested in learning more?
-									p.text-sm Enter your email and we will contact you promptly. We won't send you unsolicited emails.
+	#subscribe.theme-signup.center.wide: div
+		.container
+			//- block needed so width doesn't default to 100% and can horizontally center
+			.theme-dark.block.text-block.pad-lg
+					h1 Interested in learning more?
+					p.text-sm Enter your email and we will contact you promptly. We won't send you unsolicited emails.
 
-									form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-											.row
-													.col-xs-8
-															.form-group
-																	input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
-													.col-xs-4
-															div(style='position: absolute; left: -5000px;')
-																	input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
-															button.btn.btn-block Submit
+					form(action='//institute.us8.list-manage.com/subscribe/post?u=7ee4ab397f3a604f4299bdeaa&id=252665f9ef', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+							.row
+									.col-xs-8
+											.form-group
+													input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
+									.col-xs-4
+											div(style='position: absolute; left: -5000px;')
+													input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
+											button.btn.btn-dark.btn-block Submit
 
 	//- footer
-	.theme-dark.text-sm
-			.container.vpad
+	.theme-dark-color.text-sm.bfc
+			.container
 				.a(id='bottom')
 							.col-md-6
 									p.nospace Thanks for stopping by :)
@@ -168,7 +168,5 @@ block content
 							.col-md-6
 									.hidden-md.hidden-lg: .space-above
 									.right-sm
-											p.nospace Questions? &nbsp;&nbsp;&nbsp;
-													a(href='mailto:raine@digitalcoachingnetwork.com') raine@digitalcoachingnetwork.com
-													|  &middot; 
-													a(href='mailto:robin@digitalcoachingnetwork.com') robin@digitalcoachingnetwork.com
+											p.nospace
+													a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com

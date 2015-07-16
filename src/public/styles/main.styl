@@ -4,8 +4,9 @@
 white = #fff
 black = #000
 
-midnight =  #2c2c2d
+midnight =  #202020
 purple = rgb(144, 35, 117)
+pink = pink
 
 gray(amount)
 	hsl(0,0,amount + '%')
@@ -71,6 +72,13 @@ p, ul
 	font-size 1.35em
 	letter-spacing 0.2px
 	margin-right 4px
+
+.bfc
+	overflow auto
+
+.container
+	margin-top 20px
+	margin-bottom 20px
 
 .container-narrow
 	max-width 875px
@@ -189,17 +197,8 @@ h1,h2,h3,h4,h5
 
 a.text-highlight
 	&:hover, &:focus
-		color lighten(aquamarine, 20%)
-		outline-color lighten(aquamarine, 20%)
-		text-decoration none
-
-.text-darkgreen
-	color darken(aquamarine, 20%)
-
-a.text-darkgreen
-	&:hover, &:focus
-		color darken(aquamarine, 30%)
-		outline-color darken(aquamarine, 30%)
+		color lighten(purple, 20%)
+		outline-color lighten(purple, 20%)
 		text-decoration none
 
 .list-wide li
@@ -208,14 +207,18 @@ a.text-darkgreen
 .border-gray
 	border solid 5px gray(50)
 
+.btn-block
+	width auto
+	min-width 100%
+
 .btn-dark
-	color=aquamarine
+	color=pink
 	border solid 1px color
 	background-color transparent
-	color white
+	color color
 	&:hover
-		color color
-		border-color color
+		color white
+		border-color white
 
 // themes
 .theme-pale
@@ -232,6 +235,11 @@ a.text-darkgreen
 	background-color gray(90)
 
 .theme-dark
+	border-top solid 5px purple
+	background-color midnight
+	color white
+
+.theme-dark-color
 	background-color purple
 	color white
 
@@ -242,12 +250,12 @@ a.text-darkgreen
 	min-height 700px
 
 .theme-highlight
-	background-color lighten(aquamarine, 75%)
+	background-color lighten(purple, 75%)
 
 .theme-signup
 	background 50% 0 no-repeat scroll
 	background-image url(/images/two_computers.jpg)
-	min-height 80%
+	min-height 86%
 	background-size cover
 
 .theme-about
@@ -393,9 +401,6 @@ a.text-darkgreen
 	position relative
 	z-index 2000 // must be greater than z-index of Bootstrap navbar (1029)
 
-.background-purple
-	background-color purple
-
 .btn-action
 	transition all 0.6s ease-out
 	font-size 16px
@@ -446,10 +451,6 @@ a.text-darkgreen
 .relative
 	position relative
 
-.learn-more
-	position relative
-	padding 15px
-	// top 290px
-	color white
-	background-color black
-	opacity .8
+.text-block
+	h1
+		margin-top 0
