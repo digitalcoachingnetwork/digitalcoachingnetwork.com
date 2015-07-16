@@ -60,6 +60,11 @@ ul {
   letter-spacing: 0.2px;
   margin-right: 4px;
 }
+.text-lead-lg {
+  font-size: 32px;
+  letter-spacing: 0.2px;
+  margin-right: 4px;
+}
 .bfc {
   overflow: auto;
 }
@@ -253,7 +258,8 @@ h5.text-caption {
   color: #b2b2b2;
 }
 .text-highlight {
-  color: #fff;
+  font-weight: 700;
+  color: #902375;
 }
 a.text-highlight:hover,
 a.text-highlight:focus {
@@ -263,6 +269,10 @@ a.text-highlight:focus {
 }
 .list-wide li {
   margin-bottom: 10px;
+}
+.border-block {
+  border: solid 1px #902375;
+  display: inline-block;
 }
 .border-gray {
   border: solid 5px #808080;
@@ -309,7 +319,7 @@ a.text-highlight:focus {
   min-height: 700px;
 }
 .theme-highlight {
-  background-color: #efbce2;
+  color: #902375;
 }
 .theme-signup {
   background: 50% 0 no-repeat scroll;
