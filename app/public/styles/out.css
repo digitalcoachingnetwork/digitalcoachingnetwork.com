@@ -542,3 +542,11 @@ a.text-highlight:focus {
 .text-block h1 {
   margin-top: 0;
 }
+.robin {
+  color: #4682b4;
+  font-size: 22px;
+}
+.raine {
+  color: #9932cc;
+  font-size: 22px;
+}
