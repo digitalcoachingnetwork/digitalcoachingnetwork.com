@@ -428,6 +428,10 @@ a.text-highlight:focus {
   background-color: transparent;
   border-top-width: 5px;
 }
+.navbar-solid {
+  background-color: #902375;
+  border-top-width: 5px;
+}
 .navbar-content {
   font-size: 16px;
 }
