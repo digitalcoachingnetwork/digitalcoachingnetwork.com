@@ -298,7 +298,7 @@ a.text-highlight:focus {
   background: no-repeat 50% 0 fixed;
   background-image: url("/images/sunglasses-and-pad.jpg");
   background-size: cover;
-  min-height: 700px;
+  height: 100%;
 }
 .theme-pretty-light {
   background-color: #e6e6e6;
@@ -316,7 +316,7 @@ a.text-highlight:focus {
   background: no-repeat 50% 0 fixed;
   background-image: url("/images/top_down.jpg");
   background-size: cover;
-  min-height: 700px;
+  height: 100%;
 }
 .theme-highlight {
   color: #902375;
