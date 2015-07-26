@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node app/",
-    "nodemon": "nodemon -w src app/",
+    "nodemon": "nodemon -w app -x 'npm start'",
     "test": "mocha --recursive --compilers coffee:coffee-script/register",
     "browser": "browserify -s $npm_package_name -o browser.js .",
     "pingheroku": "heroku info -s | grep web_url | cut -d= -f2 | xargs -I{} curl {} -w '%{http_code}' -so /dev/null"
