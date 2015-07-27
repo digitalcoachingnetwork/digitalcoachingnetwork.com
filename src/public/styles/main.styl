@@ -37,6 +37,7 @@ a
 		text-decoration none
 		color lighten(color, 15%)
 		outline-color lighten(color, 15%)
+		border-bottom solid 2px white
 
 h1
 	margin-top 50px
@@ -212,7 +213,6 @@ a.text-highlight
 
 .border-block
 	border solid 1px purple
-	display inline-block
 
 .border-gray
 	border solid 5px gray(50)
@@ -222,24 +222,36 @@ a.text-highlight
 	min-width 100%
 
 .btn-dark
-	color=pink
-	border solid 1px color
+	color white
 	background-color transparent
-	color color
+	border solid 1px white
 	&:hover
-		color white
-		border-color white
+		color pink
+		border-color pink
 
 // themes
 .theme-pale
 	color gray(25)
 	background-color gray(90)
+	a
+		color purple
+		font-weight bold
+	a:hover
+		border-bottom solid 2px purple
 
 .theme-pretty
 	background no-repeat 50% 0 fixed
 	background-image url(/images/sunglasses-and-pad.jpg)
 	background-size cover
 	height 100%
+
+.theme-light
+	background-color gray(96)
+	a
+		color purple
+		font-weight bold
+	a:hover
+		border-bottom solid 2px purple
 
 .theme-pretty-light
 	background-color gray(90)
