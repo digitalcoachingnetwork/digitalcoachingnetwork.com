@@ -2,7 +2,6 @@ express = require('express')
 bodyParser = require('body-parser')
 indexController = require('./controllers/index.js')
 aboutController = require('./controllers/about.js')
-require 'newrelic'
 
 app = express()
 app.set 'view engine', 'jade'
