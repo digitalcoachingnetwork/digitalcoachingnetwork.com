@@ -3,19 +3,12 @@
 // });
 
 function checkScroll(){
-    var startY = 50; //The point where the navbar changes in px
-
-    if($(window).scrollTop() > startY){
-        $('.navbar').addClass("scrolled");
-    }else{
-        $('.navbar').removeClass("scrolled");
-    }
+  var startY = 50; // the point where the navbar changes in px
+  $('.navbar').toggleClass('scrolled', $(window).scrollTop() > startY);
 }
 
 if($('.navbar').length > 0){
-    $(window).on("scroll load resize", function(){
-        checkScroll();
-    });
+    $(window).on("scroll load resize", checkScroll);
 }
 
 $(function() {
