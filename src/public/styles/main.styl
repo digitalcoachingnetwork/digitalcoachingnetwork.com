@@ -166,6 +166,13 @@ sizes(vspace, margin-top, margin-bottom)
 sizes(space-above, margin-top)
 sizes(space-below, margin-bottom)
 
+// lg and xl padding on mobile need to be reduced from blowing out the width
+@media (max-width: width-xs)
+  .pad-lg
+    padding 43px
+  .pad-xl
+    padding 86px
+
 .nospace
   margin 0
 
