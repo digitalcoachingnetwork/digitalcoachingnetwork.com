@@ -14,9 +14,13 @@ block content
 
   //- hero unit
   .hero.theme-pretty.relative
-    .vpad.title-color.herotag
+    .vpad-md.title-color.herotag
       .vert
-        h1.title Learn essential computer skills in a supportive, 1-on-1 relationship
+        h1.title Learn essential computer skills in a supportive, 
+          br.visible-xs
+          | 1-on-1 
+          | relationship
+        h2.subtitle Hire a digital coach
 
   //- intro
   .theme-pale
@@ -26,15 +30,16 @@ block content
       p Digital Coaching is a service that is designed to help you become more productive and confident with computers and web applications without having to become a techie. It happens in a 1-on-1 relationship with a real person, someone who can answer questions and support you in creating a more effective relationship with technology.
 
       .text-center.space-above-md
+
         ol.text-left.space-below-md
           li Get paired with a digital coach.
           li Learn the key points to effective technology use.
           li Enjoy a new, empowered relationship with technology.
-        .border-block.pad-md.space-below-md
-          .text-highlight Keep reading to find out what we teach, 
-            br.hidden-xs
-            | who teaches it, and how to get started!
 
+        .border-block.pad-md.space-below-md
+          .text-highlight Keep reading to learn about Featured Workflows—
+            br.hidden-xs
+            | our approach to increased confidence with technology!
 
   //- Workflows and Tools
   .theme-light: .container-narrow.pad.vpad-md
@@ -178,20 +183,23 @@ block content
           .row
             .col-xs-8
               .form-group
-                input.form-control(type='email' placeholder='Enter Your Email' name='EMAIL' required)
+                input.form-control(type='email' placeholder='Email' name='EMAIL' required)
             .col-xs-4
               div(style='position: absolute; left: -5000px;')
                 input(type='text' name='b_7ee4ab397f3a604f4299bdeaa_252665f9ef' tabindex='-1' value='')
               button.btn.btn-dark.btn-block Submit
 
   //- footer
-  .theme-dark-color.text-sm.bfc: .container
-    #bottom
+  #bottom
+    .hidden-xs.theme-dark-color.text-sm.bfc: .container
       .col-sm-6
         p.nospace Thanks for stopping by :)
 
       .col-sm-6
-        .hidden-sm.hidden-md.hidden-lg: .space-above
-        .right-sm
+        .right
           p.nospace
             a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
+
+    .visible-xs.theme-dark-color.text-sm: .container-fluid
+      .col-sm-12
+        p.nospace.vpad-xs Thanks for stopping by :)

@@ -66,8 +66,14 @@ p, ul
     margin-top 20px
   h1
     font-size 40px
+    @media (max-width: width-xs)
+      font-size 25px
   h2
-    font-size 22px
+    font-style italic
+    margin-top 1.4em
+    font-size 30px
+    @media (max-width: width-xs)
+      font-size 22px
 
 .text-lead
   font-size 1.35em
@@ -120,6 +126,11 @@ p, ul
 .right
   float right
 
+// create a mixin for background-attachment: fixed since it does not work on mobile
+fixed-background()
+  @media (min-width: width-sm)
+    background-attachment fixed
+
 @media (max-width: 740px)
   .title-linebreak
     display none
@@ -149,7 +160,8 @@ p, ul
 //   }
 
 sizes(classPrefix, props...)
-  sizeValues = -sm 15px,
+  sizeValues = -xs 7px,
+             -sm 15px,
              '' 25px,
              -md 50px,
              -lg 100px,
@@ -166,8 +178,10 @@ sizes(vspace, margin-top, margin-bottom)
 sizes(space-above, margin-top)
 sizes(space-below, margin-bottom)
 
-// lg and xl padding on mobile need to be reduced from blowing out the width
+// padding on mobile need to be reduced from blowing out the width
 @media (max-width: width-xs)
+  .pad-md
+    padding 30px
   .pad-lg
     padding 43px
   .pad-xl
@@ -247,10 +261,13 @@ a.text-highlight
     border-bottom solid 2px purple
 
 .theme-pretty
-  background no-repeat 50% 0 fixed
+  fixed-background()
+  background purple no-repeat 50% 0
   background-image url(/images/sunglasses-and-pad.jpg)
   background-size cover
   height 100%
+  @media (min-width: width-sm)
+    background-attachment fixed
 
 .theme-light
   background-color gray(96)
@@ -264,7 +281,6 @@ a.text-highlight
   background-color gray(90)
 
 .theme-dark
-  border-top solid 5px purple
   background-color midnight
   color white
 
@@ -273,7 +289,8 @@ a.text-highlight
   color white
 
 .theme-quote
-  background no-repeat 50% 0 fixed
+  fixed-background()
+  background no-repeat 50% 0
   background-image url(/images/top_down.jpg)
   background-size cover
   height 100%
@@ -284,8 +301,11 @@ a.text-highlight
 .theme-signup
   background 50% 0 no-repeat scroll
   background-image url(/images/two_computers.jpg)
-  min-height 92%
+  min-height 93%
   background-size cover
+  @media(max-width: width-xs)
+    min-height 115%
+    margin-bottom: -20px
 
 .theme-about
   background 50% 0 no-repeat scroll
@@ -345,15 +365,13 @@ a.text-highlight
   color #F0F0EE
 
 .herotag
-  position relative
-  // bottom 50px
+  position absolute
+  bottom 50px
   // left 50px
   box-sizing border-box
   text-align center
-  width 50%
+  width 45%
   height 350px
-  line-height 420px
-  top 230px
   left 20px
 
 .vert
@@ -363,10 +381,6 @@ a.text-highlight
 .title
   font-weight 400
   font-size 52px
-  margin-bottom 0
-
-.subtitle
-  font-size 29px
   margin-bottom 0
 
 .proxy
@@ -387,6 +401,11 @@ a.text-highlight
   opacity 0.75
   max-width none
   z-index 1
+  // unexplained mobile offset
+  // TODO: find out why
+  @media (max-width: width-xs)
+    top -70px
+    left 25px
 
 .navbar
   background-color purple
@@ -394,6 +413,17 @@ a.text-highlight
 .navbar:not(.scrolled)
   background-color transparent
   border-top-width 5px
+
+// @media (max-width: width-xs)
+//   .navbar.scrolled-bottom .navbar-brand-container
+//     position absolute
+//     padding-top 8px
+//     display block
+//     text-align center
+//     width 100%
+//     z-index 0 // keep under .navbar-toggle
+//     .navbar-brand
+//       float none
 
 .navbar-solid
   background-color purple
@@ -476,6 +506,10 @@ a.text-highlight
   right 0
   top 0
   bottom 0
+  // darken more when text covers image
+  @media (max-width: width-sm)
+    opacity 0.6
+
 
 .darken-relative
   background-color rgba(0,0,0,0.25);
