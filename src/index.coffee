@@ -11,5 +11,5 @@ app.use bodyParser.urlencoded extended:false
 app.get '/', indexController.index
 app.get '/about', aboutController.about
 
-server = app.listen process.env.PORT || 9882, ->
+server = app.listen process.env.PORT || process.env.npm_package_config_port || 3000, ->
 	console.log 'Express server listening on port ' + server.address().port

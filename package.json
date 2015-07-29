@@ -13,10 +13,15 @@
     "node": "0.12.x",
     "npm": "^2.11.3"
   },
+  "config": {
+    "port": 9882
+  },
   "scripts": {
     "start": "node app/",
     "postinstall": "gulp build",
     "nodemon": "nodemon -w app -x 'npm start'",
+    "ngrok": "ngrok -subdomain=dcn $npm_package_config_port",
+    "ngrok2": "ngrok -subdomain=dcn2 $npm_package_config_port",
     "test": "mocha --recursive --compilers coffee:coffee-script/register",
     "browser": "browserify -s $npm_package_name -o browser.js .",
     "pingheroku": "heroku info -s | grep web_url | cut -d= -f2 | xargs -I{} curl {} -w '%{http_code}' -so /dev/null"
