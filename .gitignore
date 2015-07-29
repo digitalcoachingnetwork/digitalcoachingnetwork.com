@@ -1,2 +1,8 @@
 node_modules
 newrelic_agent.log
+
+# ignore compiled files
+app/*.js
+app/controllers
+app/public/javascripts
+app/public/styles
