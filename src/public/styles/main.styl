@@ -66,12 +66,16 @@ p, ul
     margin-top 20px
   h1
     font-size 40px
+    @media (max-width: width-sm)
+      font-size 32px
     @media (max-width: width-xs)
       font-size 25px
   h2
     font-style italic
     margin-top 1.4em
     font-size 30px
+    @media (max-width: width-sm)
+      font-size 28px
     @media (max-width: width-xs)
       font-size 22px
 
@@ -366,13 +370,14 @@ a.text-highlight
 
 .herotag
   position absolute
-  bottom 50px
+  bottom 13%
   // left 50px
   box-sizing border-box
   text-align center
   width 45%
-  height 350px
   left 20px
+  @media (max-width: width-sm)
+    bottom 0
 
 .vert
   display inline-block
@@ -413,17 +418,6 @@ a.text-highlight
 .navbar:not(.scrolled)
   background-color transparent
   border-top-width 5px
-
-// @media (max-width: width-xs)
-//   .navbar.scrolled-bottom .navbar-brand-container
-//     position absolute
-//     padding-top 8px
-//     display block
-//     text-align center
-//     width 100%
-//     z-index 0 // keep under .navbar-toggle
-//     .navbar-brand
-//       float none
 
 .navbar-solid
   background-color purple
