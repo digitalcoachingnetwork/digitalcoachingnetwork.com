@@ -19,7 +19,6 @@ concat =       require 'gulp-concat'
 cache =        require 'gulp-cache'
 livereload =   require 'gulp-livereload'
 filter =       require 'gulp-filter'
-ngAnnotate =   require 'gulp-ng-annotate'
 del =          require 'del'
 open =         require 'open'
 
