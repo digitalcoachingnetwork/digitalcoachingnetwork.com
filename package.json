@@ -10,7 +10,8 @@
     "url": "https://github.com/metaraine"
   },
   "engines": {
-    "node": "^0.12.7"
+    "node": "0.12.x",
+    "npm": "^2.11.3"
   },
   "scripts": {
     "start": "node app/",
