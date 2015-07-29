@@ -132,22 +132,16 @@ gulp.task 'open', ->
 
 gulp.task 'watch', (cb) ->
 
-	gulp.watch([config.srcCss, config.srcSass, config.srcStylus], ['styles'])._watcher.on 'all', livereload
-	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
-	gulp.watch([config.srcAllJs, config.srcAllCoffee, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
+	gulp.watch([config.srcCss, config.srcSass, config.srcStylus], ['styles'])
+	gulp.watch(config.srcClientScripts, ['clientScripts'])
+	gulp.watch([config.srcAllJs, config.srcAllCoffee, '!' + config.srcClientScripts], ['serverScripts'])
 	# gulp.watch([config.views], ['views'])._watcher.on 'all', livereload
 	# gulp.watch(config.srcImg, ['images'])._watcher.on 'all', livereload
 
 # default task -- run 'gulp' from cli
 gulp.task 'default', (cb) ->
 
-	runSequence 'clean', [
-		# 'plugins'
-		'clientScripts'
-		'serverScripts'
-		'styles'
-		# 'images'
-	], 'watch', cb
+	runSequence 'build', 'watch', cb
 
 	livereload.listen config.livereloadPort
 
