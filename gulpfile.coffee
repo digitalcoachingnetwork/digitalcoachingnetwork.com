@@ -76,7 +76,6 @@ gulp.task 'clientScripts', ->
 		.pipe(plumber(errorHandler: notifyOnError))
 		.pipe(coffee().on('error', gutil.log))
 		.pipe(concat(config.jsConcatTarget))
-		.pipe(ngAnnotate())
 		.pipe(gulp.dest(config.destClientScripts))
 		.pipe(rename(suffix: '.min'))
 		.pipe(uglify())
