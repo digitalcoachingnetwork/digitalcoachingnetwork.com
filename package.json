@@ -54,11 +54,13 @@
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.3",
     "jade": "^1.9.2",
+    "localenv": "^0.2.2",
     "mongoose": "^4.1.0",
     "nib": "^1.1.0",
     "open": "0.0.5",
     "port-config": "^0.1.0",
     "run-sequence": "^1.0.2",
+    "sendgrid": "^1.9.2",
     "vinyl-paths": "^1.0.0"
   },
   "devDependencies": {
