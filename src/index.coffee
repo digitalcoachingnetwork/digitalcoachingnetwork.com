@@ -10,10 +10,14 @@ indexController = require('./controllers/index')
 aboutController = require('./controllers/about')
 config          = require('./config')
 Client          = require('./models/client');
-
-Promise.promisifyAll(sendgrid)
+Trello          = require('trello')
 
 mongoose.connect(config.mongo.connectionString)
+
+trello = new Trello(process.env.TRELLO_API_KEY, process.env.TRELLO_USER_TOKEN)
+
+Promise.promisifyAll(trello)
+Promise.promisifyAll(sendgrid)
 
 app = express()
 app.set 'view engine', 'jade'
@@ -26,7 +30,7 @@ app.use session
   saveUninitialized: true
 
 # sends an email to the site owners when a new client has registered
-sendEmail = (email)->
+sendNewClientEmail = (email)->
   sendgrid.sendAsync({
     to:       config.adminEmail,
     from:     email,
@@ -37,6 +41,8 @@ sendEmail = (email)->
 app.get '/', indexController.index
 app.get '/about', aboutController.about
 app.post '/signup', (req, res)->
+
+  email = req.body.email
 
   success = ->
     req.session.subscribed = true
@@ -49,14 +55,18 @@ app.post '/signup', (req, res)->
       console.log(err)
       res.status(500).send()
 
-  if req.body.email
-    client = new Client email:req.body.email
-    Promise.resolve(client.save())
-      .then(sendEmail.bind(null, req.body.email))
-      .then(success)
-      .catch(error)
-  else
-    error('Email is required')
+
+  if !req.body.email
+    return error('Email is required')
+
+  # save to db, save to trello, email admins
+  Promise.join(
+    (new Client email:email).save(),
+    trello.addCardAsync(email, null, config.trello.newClientListId),
+    sendNewClientEmail(email)
+  )
+  .then(success)
+  .catch(error)
 
 server = app.listen portConfig(), ->
 	console.log 'Express server listening on port ' + server.address().port
