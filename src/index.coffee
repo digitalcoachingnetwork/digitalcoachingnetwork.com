@@ -3,6 +3,7 @@ express         = require('express')
 bodyParser      = require('body-parser')
 mongoose        = require('mongoose')
 session         = require('express-session')
+favicon         = require('serve-favicon')
 Promise         = require('bluebird')
 sendgrid        = require('sendgrid')(process.env.SENDGRID_API_KEY)
 portConfig      = require('port-config')
@@ -22,6 +23,7 @@ Promise.promisifyAll(sendgrid)
 app = express()
 app.set 'view engine', 'jade'
 app.set 'views', __dirname + '/views'
+app.use favicon __dirname + '/public/favicon.ico'
 app.use express.static(__dirname + '/public')
 app.use bodyParser.urlencoded extended:false
 app.use session

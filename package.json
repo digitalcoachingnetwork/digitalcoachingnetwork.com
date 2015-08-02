@@ -62,6 +62,7 @@
     "port-config": "^0.1.0",
     "run-sequence": "^1.0.2",
     "sendgrid": "^1.9.2",
+    "serve-favicon": "^2.3.0",
     "trello": "^0.3.0",
     "vinyl-paths": "^1.0.0"
   },
