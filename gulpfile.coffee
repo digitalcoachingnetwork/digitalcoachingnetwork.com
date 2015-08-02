@@ -15,7 +15,7 @@ jshint =       require 'gulp-jshint'
 rename =       require 'gulp-rename'
 uglify =       require 'gulp-uglify'
 concat =       require 'gulp-concat'
-# imagemin =     require 'gulp-imagemin'
+imagemin =     require 'gulp-imagemin'
 cache =        require 'gulp-cache'
 livereload =   require 'gulp-livereload'
 filter =       require 'gulp-filter'
@@ -48,8 +48,8 @@ config =
 	destServerScripts: 'app'
 
 	# images
-	srcImg: 'src/public/images/**/*.*'
-	destImg: 'app/public/images'
+	srcImg: 'src/public/sprites/**/*.*'
+	destImg: 'app/public/images/sprites'
 
 # styles task
 gulp.task 'styles', ->
@@ -98,10 +98,10 @@ gulp.task 'serverScripts', ->
 		.pipe livereload(auto:false)
 
 # minify images
-# gulp.task 'images', ->
-# 	gulp.src(config.srcImg)
-# 		.pipe(imagemin())
-# 		.pipe gulp.dest(config.destImg)
+gulp.task 'images', ->
+	gulp.src(config.srcImg)
+		.pipe(imagemin())
+		.pipe gulp.dest(config.destImg)
 
 # clean
 gulp.task 'clean', (cb)->
@@ -109,7 +109,8 @@ gulp.task 'clean', (cb)->
 		config.destCss,
 		'app/*.js',
 		'app/controllers/*.js',
-		'app/public/scripts/*.js'
+		'app/public/scripts/*.js',
+    'app/public/images/sprites'
 	], cb)
 
 # build

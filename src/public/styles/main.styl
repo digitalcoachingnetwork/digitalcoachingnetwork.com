@@ -11,10 +11,11 @@ pink = pink
 gray(amount)
   hsl(0,0,amount + '%')
 
-// constants
-width-xs = 768px
-width-sm = 992px
-width-md = 1200px
+// responsive breakpoints (following bootstrap breakpoints)
+screen-sm-min = 768px
+screen-md-min = 992px
+screen-lg-min = 1200px
+screen-xl-min = 2304px // retina
 
 // defaults
 *
@@ -33,7 +34,7 @@ a
   color=white
   color color
 
-  @media (min-width: width-sm)
+  @media (min-width: screen-md-min)
     &:hover
       text-decoration none
       color lighten(color, 15%)
@@ -67,17 +68,17 @@ p, ul
     margin-top 20px
   h1
     font-size 40px
-    @media (max-width: width-sm)
+    @media (max-width: screen-md-min)
       font-size 32px
-    @media (max-width: width-xs)
+    @media (max-width: screen-sm-min)
       font-size 25px
   h2
     font-style italic
     margin-top 1.4em
     font-size 30px
-    @media (max-width: width-sm)
+    @media (max-width: screen-md-min)
       font-size 28px
-    @media (max-width: width-xs)
+    @media (max-width: screen-sm-min)
       font-size 22px
 
 .text-lead
@@ -133,14 +134,14 @@ p, ul
 
 // create a mixin for background-attachment: fixed since it does not work on mobile
 fixed-background()
-  @media (min-width: width-sm)
+  @media (min-width: screen-md-min)
     background-attachment fixed
 
 @media (max-width: 740px)
   .title-linebreak
     display none
 
-@media (min-width: width-sm)
+@media (min-width: screen-md-min)
   .left-sm
     float left
   .right-sm
@@ -183,8 +184,25 @@ sizes(vspace, margin-top, margin-bottom)
 sizes(space-above, margin-top)
 sizes(space-below, margin-bottom)
 
+// generates -sm, -md, -lg, and -xl background-images at each breakpoint
+// e.g.
+//   background-image: url("/images/pic-sm.jpg")
+//   @media (min-width: 992px) background-image: url("/images/pic-md.jpg");
+//   @media (min-width: 1200px) background-image: url("/images/pic-lg.jpg");
+//   @media (min-width: 2304px) background-image: url("/images/pic-xl.jpg");
+background-image-responsive(url)
+  base = pathjoin(dirname(url), basename(url, extname(url)))
+  ext = extname(url)
+  background-image url(base + '-sm' + ext)
+  @media (min-width: screen-md-min)
+    background-image url(base + '-md' + ext)
+  @media (min-width: screen-lg-min)
+    background-image url(base + '-lg' + ext)
+  @media (min-width: screen-xl-min)
+    background-image url(base + '-xl' + ext)
+
 // padding on mobile need to be reduced from blowing out the width
-@media (max-width: width-xs)
+@media (max-width: screen-sm-min)
   .pad-md
     padding 30px
   .pad-lg
@@ -268,10 +286,10 @@ a.text-highlight
 .theme-pretty
   fixed-background()
   background purple no-repeat 50% 0
-  background-image url(/images/sunglasses-and-pad.jpg)
+  background-image-responsive '/images/sunglasses-and-pad.jpg'
   background-size cover
   height 100%
-  @media (min-width: width-sm)
+  @media (min-width: screen-md-min)
     background-attachment fixed
 
 .theme-light
@@ -296,7 +314,7 @@ a.text-highlight
 .theme-quote
   fixed-background()
   background no-repeat 50% 0
-  background-image url(/images/top_down.jpg)
+  background-image-responsive '/images/top-down.jpg'
   background-size cover
   height 100%
 
@@ -305,10 +323,10 @@ a.text-highlight
 
 .theme-signup
   background 50% 0 no-repeat scroll
-  background-image url(/images/two_computers.jpg)
+  background-image-responsive '/images/two-computers.jpg'
   min-height 93%
   background-size cover
-  @media(max-width: width-xs)
+  @media(max-width: screen-sm-min)
     min-height 115%
     margin-bottom: -20px
 
@@ -377,7 +395,7 @@ a.text-highlight
   text-align center
   width 45%
   left 20px
-  @media (max-width: width-sm)
+  @media (max-width: screen-md-min)
     bottom 0
 
 .vert
@@ -409,7 +427,7 @@ a.text-highlight
   z-index 1
   // unexplained mobile offset
   // TODO: find out why
-  @media (max-width: width-xs)
+  @media (max-width: screen-sm-min)
     top -70px
     left 25px
 
@@ -448,7 +466,7 @@ a.text-highlight
     &:hover, &:focus
       color white
       background-color transparent
-      @media (min-width: width-xs)
+      @media (min-width: screen-sm-min)
         padding-bottom 13px
 
 .icon-bar
@@ -501,7 +519,7 @@ a.text-highlight
   top 0
   bottom 0
   // darken more when text covers image
-  @media (max-width: width-sm)
+  @media (max-width: screen-md-min)
     opacity 0.6
 
 
