@@ -48,8 +48,8 @@ config =
 	destServerScripts: 'app'
 
 	# images
-	srcImg: 'src/public/sprites/**/*.*'
-	destImg: 'app/public/images/sprites'
+	srcImg: 'src/public/images/**/*.*'
+	destImg: 'app/public/images'
 
 # styles task
 gulp.task 'styles', ->
@@ -120,7 +120,7 @@ gulp.task 'build', (cb)->
 		'clientScripts'
 		'serverScripts'
 		'styles'
-		# 'images'
+		'images'
 	], cb
 
 # gulp.task 'views', (cb)->
@@ -136,8 +136,8 @@ gulp.task 'watch', (cb) ->
 	gulp.watch([config.srcCss, config.srcSass, config.srcStylus], ['styles'])
 	gulp.watch(config.srcClientScripts, ['clientScripts'])
 	gulp.watch([config.srcAllJs, config.srcAllCoffee, '!' + config.srcClientScripts], ['serverScripts'])
-	# gulp.watch([config.views], ['views'])._watcher.on 'all', livereload
-	# gulp.watch(config.srcImg, ['images'])._watcher.on 'all', livereload
+	gulp.watch(config.srcImg, ['images'])
+  # gulp.watch([config.views], ['views'])._watcher.on 'all', livereload
 
 # default task -- run 'gulp' from cli
 gulp.task 'default', (cb) ->

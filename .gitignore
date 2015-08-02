@@ -7,3 +7,4 @@ app/*.js
 app/controllers
 app/public/javascripts
 app/public/styles
+app/public/images
