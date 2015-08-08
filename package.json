@@ -35,7 +35,7 @@
     "del": "^1.2.0",
     "event-stream": "^3.2.2",
     "express": "^4.11.2",
-    "express-enforces-ssl": "^1.1.0",
+    "express-force-ssl": "^0.2.13",
     "express-session": "^1.11.3",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "*",

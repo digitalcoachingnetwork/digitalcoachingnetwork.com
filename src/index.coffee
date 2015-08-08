@@ -12,8 +12,8 @@ aboutController      = require('./controllers/about')
 config               = require('./config')
 Client               = require('./models/client');
 Trello               = require('trello')
-express_enforces_ssl = require('express-enforces-ssl')
-helmet               = require('helmet')
+forceSSL             = require('express-force-ssl')
+# helmet               = require('helmet')
 
 mongoose.connect(config.mongo.connectionString)
 
@@ -32,11 +32,11 @@ app.use session
   secret: 'dcn',
   resave: false,
   saveUninitialized: true
-app.enable('trust proxy')
 
 if process.env.NODE_ENV is 'production'
-  app.use(express_enforces_ssl())
-  app.use(helmet())
+  console.log('using forceSSL')
+  app.use(forceSSL)
+  # app.use(helmet())
 
 # sends an email to the site owners when a new client has registered
 sendNewClientEmail = (email)->
