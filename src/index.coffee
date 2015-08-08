@@ -34,7 +34,7 @@ app.use session
   saveUninitialized: true
 app.enable('trust proxy')
 
-if process.env.NODE_ENVIRONMENT is 'production'
+if process.env.NODE_ENV is 'production'
   app.use(express_enforces_ssl())
   app.use(helmet())
 
