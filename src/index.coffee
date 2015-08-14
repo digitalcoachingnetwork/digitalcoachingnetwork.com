@@ -48,7 +48,8 @@ sendNewClientEmail = (email)->
   })
 
 app.get '/', indexController.index
-app.get '/about', aboutController.about
+app.get '/about', indexController.about
+app.get '/pay', indexController.pay
 app.post '/signup', (req, res)->
 
   email = req.body.email

@@ -1,0 +1,61 @@
+extends layout
+
+include mixins/navbar.jade
+
+block styles
+  link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open Sans:300')
+
+block title
+  title Digital Coaching Network
+
+block content
+
+  +navbarSimple()
+
+  .hero.theme-pretty.center.three-column
+    .row
+      .col-sm-8.col-sm-offset-2
+        .theme-dark-color.pad-md.hidden-xs
+
+          .row
+            .col-sm-4
+              h1 Single Session
+              h2 A single, 1-hr session with your digital coach.
+              button.btn.btn-dark.btn-block.space-above-md Purchase 1 session
+
+            .col-sm-4
+              h1 3-Session Package
+              h2 A discounted package of 3 1-hr sessions with your digital coach.
+              button.btn.btn-dark.btn-block.space-above-md Purchase 3 sessions
+              
+            .col-sm-4
+              h1 10-Session Package
+              h2 A discounted package of 10 1-hr sessions with your digital coach.
+              button.btn.btn-dark.btn-block.space-above-md Purchase 10 sessions
+
+          .row.space-above-md
+            .col-sm-12
+              .text-sm Please email 
+                a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
+                |  if you have any questions.
+
+        .pad-md.visible-xs
+
+          .theme-dark-color.pad-md.space-below-md
+            h1 Single Session
+            h2 A single, 1-hr session with your digital coach.
+            button.btn.btn-dark.btn-block.space-above-md Purchase 1 session
+
+          .theme-dark-color.pad-md.space-below-md
+            h1 3-Session Package
+            h2 A discounted package of 3 1-hr sessions with your digital coach.
+            button.btn.btn-dark.btn-block.space-above-md Purchase 3 sessions
+
+          .theme-dark-color.pad-md.space-below-md
+            h1 10-Session Package
+            h2 A discounted package of 10 1-hr sessions with your digital coach.
+            button.btn.btn-dark.btn-block.space-above-md Purchase 10 sessions
+
+          .theme-dark-color.pad-md.text-sm Please email 
+            a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
+            |  if you have any questions.

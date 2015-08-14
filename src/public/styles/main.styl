@@ -3,6 +3,7 @@
 // colors
 white = #fff
 black = #000
+offwhite = #F0F0EE
 
 midnight =  #202020
 purple = rgb(144, 35, 117)
@@ -30,7 +31,7 @@ body
   font-family 'Open Sans', Adamina, Georgia, Serif
   font-size 20px
 
-a
+a, a:hover
   color=white
   color color
 
@@ -80,6 +81,12 @@ p, ul
       font-size 28px
     @media (max-width: screen-sm-min)
       font-size 22px
+
+.three-column
+  h1
+    font-size 28px
+  h2
+    font-size 16px
 
 .text-lead
   font-size 1.35em
@@ -289,6 +296,7 @@ a.text-highlight
   background-image-responsive '/images/sunglasses-and-pad.jpg'
   background-size cover
   height 100%
+  min-width 100%
   @media (min-width: screen-md-min)
     background-attachment fixed
 
@@ -385,9 +393,10 @@ a.text-highlight
   font-size: 32px
 
 .title-color
-  color #F0F0EE
+  color
 
 .herotag
+  color offwhite
   position absolute
   bottom 13%
   // left 50px
@@ -531,3 +540,5 @@ a.text-highlight
   height 9px
   margin 0 0.2em 0.2em 0
 
+.text-happy
+  color pink

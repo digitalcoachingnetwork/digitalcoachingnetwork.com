@@ -1,12 +1,15 @@
 extends layout
 
+include mixins/navbar.jade
+
 block styles
   link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open Sans:300')
 
 block title
   title Digital Coaching Network
 
-block content
+block scripts
+  script(src='/javascripts/index.js')
 
   //- bootstrapped data
   script.
@@ -14,14 +17,15 @@ block content
       subscribed: #{subscribed || false}
     }
 
+block content
+
   //- Fixed navbar id allows for anchor tag scroll
   #top
-  include mixins/navbar.jade
   +navbar()
 
   //- hero unit
   .hero.theme-pretty.relative
-    .vpad-md.title-color.herotag
+    .vpad-md.herotag
       .vert
         h1.title Learn essential computer skills in a supportive, 
           br.visible-xs
@@ -215,14 +219,21 @@ block content
   //- footer
   #signup
     .hidden-xs.theme-dark-color.text-sm.bfc: .container
-      .col-sm-6
-        p.nospace Thanks for stopping by :)
+      .col-sm-4
+        p.nospace
+          a(href='/pay') Pay for a session
 
-      .col-sm-6
+      .col-sm-4
+        p.text-happy.text-center.nospace Thanks for stopping by :)
+
+      .col-sm-4
         .right
           p.nospace
             a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
 
     .visible-xs.theme-dark-color.text-sm: .container-fluid
       .col-sm-12
-        p.nospace.vpad-xs Thanks for stopping by :)
+        .right
+          p.text-happy.nospace.vpad-xs Thanks for stopping by :)
+        p.nospace.vpad-xs
+          a(href='/pay') Pay for a session
