@@ -3,6 +3,7 @@ mongoose = require('mongoose')
 Promise  = require('bluebird')
 Trello   = require('trello')
 sendgrid = require('sendgrid')(process.env.SENDGRID_API_KEY)
+stripe   = require("stripe")(process.env.STRIPE_SECRET_KEY)
 Client   = require('./models/client');
 config   = require('./config.js')
 
