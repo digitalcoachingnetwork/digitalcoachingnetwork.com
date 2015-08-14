@@ -2,11 +2,59 @@ extends layout
 
 include mixins/navbar.jade
 
+//- page mixins
+mixin buy-button(name, description, shortDescription, amount, discount)
+  - discount = discount || 1
+  - var finalAmount = Math.ceil(amount * discount)
+  h1= name
+  h2= description
+  button.buy-button.btn.btn-dark.btn-block.space-above-md(data-name='Digital Coaching' data-description=shortDescription data-amount=finalAmount * 100) Buy Now for 
+    if discount !== 1
+      strike $#{amount}
+    |  $#{finalAmount}
+
+mixin buy1()
+  +buy-button('Single Session', 'A single, 1-hr session with your digital coach.', '1 session', config.hourly)
+
+mixin buy3
+  +buy-button('3-Session Package', 'A discounted package of 3 1-hr sessions with your digital coach.', '3 sessions', config.hourly * 3, 0.93)
+
+mixin buy10()
+  +buy-button('10-Session Package', 'A discounted package of 10 1-hr sessions with your digital coach.', '10 sessions', config.hourly * 10, 0.88)
+
+mixin email-message()
+  .text-sm Please email 
+    a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
+    |  if you have any questions.
+
 block styles
   link(rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open Sans:300')
 
 block title
   title Digital Coaching Network
+
+block scripts
+  script(src='https://checkout.stripe.com/checkout.js')
+  script.
+    var stripe = StripeCheckout.configure({
+      key: '#{config.stripe.key}',
+      image: 'https://s3.amazonaws.com/stripe-uploads/acct_16XJWOC9bvH8OFQUmerchant-icon-1438988192711-logo-128x128.gif',
+      token: function(token) {
+        console.log(token)
+        // Use the token to create the charge with a server-side script.
+        // You can access the token ID with `token.id`
+      }
+    })
+
+    $('.buy-button').on('click', function(e) {
+      e.preventDefault()
+
+      stripe.open({
+        name:         $(this).attr('data-name'),
+        description:  $(this).attr('data-description'),
+        amount:       $(this).attr('data-amount')
+      })
+    })
 
 block content
 
@@ -15,47 +63,25 @@ block content
   .hero.theme-pretty.center.three-column
     .row
       .col-sm-8.col-sm-offset-2
+
+        //- desktop
         .theme-dark-color.pad-md.hidden-xs
 
           .row
-            .col-sm-4
-              h1 Single Session
-              h2 A single, 1-hr session with your digital coach.
-              button.btn.btn-dark.btn-block.space-above-md Purchase 1 session
-
-            .col-sm-4
-              h1 3-Session Package
-              h2 A discounted package of 3 1-hr sessions with your digital coach.
-              button.btn.btn-dark.btn-block.space-above-md Purchase 3 sessions
-              
-            .col-sm-4
-              h1 10-Session Package
-              h2 A discounted package of 10 1-hr sessions with your digital coach.
-              button.btn.btn-dark.btn-block.space-above-md Purchase 10 sessions
+            .col-sm-4: +buy1
+            .col-sm-4: +buy3
+            .col-sm-4: +buy10
 
           .row.space-above-md
             .col-sm-12
-              .text-sm Please email 
-                a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
-                |  if you have any questions.
+              +email-message
 
+        //- mobile
         .pad-md.visible-xs
 
-          .theme-dark-color.pad-md.space-below-md.space-above-md
-            h1 Single Session
-            h2 A single, 1-hr session with your digital coach.
-            button.btn.btn-dark.btn-block.space-above-md Purchase 1 session
+          .theme-dark-color.pad-md.space-below-md.space-above-md: +buy1
+          .theme-dark-color.pad-md.space-below-md: +buy3
+          .theme-dark-color.pad-md.space-below-md: +buy10
 
-          .theme-dark-color.pad-md.space-below-md
-            h1 3-Session Package
-            h2 A discounted package of 3 1-hr sessions with your digital coach.
-            button.btn.btn-dark.btn-block.space-above-md Purchase 3 sessions
-
-          .theme-dark-color.pad-md.space-below-md
-            h1 10-Session Package
-            h2 A discounted package of 10 1-hr sessions with your digital coach.
-            button.btn.btn-dark.btn-block.space-above-md Purchase 10 sessions
-
-          .theme-transparent.text-sm Please email 
-            a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
-            |  if you have any questions.
+          .theme-transparent
+            +email-message

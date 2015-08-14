@@ -8,7 +8,6 @@ Promise              = require('bluebird')
 sendgrid             = require('sendgrid')(process.env.SENDGRID_API_KEY)
 portConfig           = require('port-config')
 indexController      = require('./controllers/index')
-aboutController      = require('./controllers/about')
 config               = require('./config')
 Client               = require('./models/client');
 Trello               = require('trello')
