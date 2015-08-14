@@ -40,15 +40,29 @@ block scripts
       key: '#{config.stripe.key}',
       image: 'https://s3.amazonaws.com/stripe-uploads/acct_16XJWOC9bvH8OFQUmerchant-icon-1438988192711-logo-128x128.gif',
       token: function(token) {
-        console.log(token)
-        // Use the token to create the charge with a server-side script.
-        // You can access the token ID with `token.id`
+        // POST to the server-side to create the charge
+        $.ajax({
+          method: 'POST',
+          url: '/charge', 
+          data: { id: token.id }, 
+          success: function() {
+            $('#pay').fadeOut(function() {
+                $('#thankyou').fadeIn()
+            })
+          }, 
+          error: function() {
+            $('#pay').fadeOut(function() {
+                $('#error').fadeIn()
+            })
+          }
+        })
       }
     })
 
     $('.buy-button').on('click', function(e) {
       e.preventDefault()
 
+      // open the stripe popup
       stripe.open({
         name:         $(this).attr('data-name'),
         description:  $(this).attr('data-description'),
@@ -64,24 +78,35 @@ block content
     .row
       .col-sm-8.col-sm-offset-2
 
-        //- desktop
-        .theme-dark-color.pad-md.hidden-xs
+        h1#thankyou.start-hidden
+          span.pad.theme-dark-color Thank You
 
-          .row
-            .col-sm-4: +buy1
-            .col-sm-4: +buy3
-            .col-sm-4: +buy10
+        #error.start-hidden
+          .theme-dark-color.pad
+            h1.space-below Well, this is embarassing...
+            p.text-left.text-sm Unfortunately, there was an error and your credit card was not charged. We tried our best. Maybe you lost your connection? Please refresh the page and try again. If that doesn't work, please contact 
+              a(href='mailto:info@digitalcoachingnetwork.com') info@digitalcoachingnetwork.com
+              |.
 
-          .row.space-above-md
-            .col-sm-12
-              +email-message
+        #pay
+          //- desktop
+          .hidden-xs
+            .theme-dark-color.pad-md
+              .row
+                .col-sm-4: +buy1
+                .col-sm-4: +buy3
+                .col-sm-4: +buy10
 
-        //- mobile
-        .pad-md.visible-xs
+              .row.space-above-md
+                .col-sm-12
+                  +email-message
 
-          .theme-dark-color.pad-md.space-below-md.space-above-md: +buy1
-          .theme-dark-color.pad-md.space-below-md: +buy3
-          .theme-dark-color.pad-md.space-below-md: +buy10
+          //- mobile
+          .visible-xs
+            .pad-md
+              .theme-dark-color.pad-md.space-below-md.space-above-md: +buy1
+              .theme-dark-color.pad-md.space-below-md: +buy3
+              .theme-dark-color.pad-md.space-below-md: +buy10
 
-          .theme-transparent
-            +email-message
+              .theme-transparent
+                +email-message
