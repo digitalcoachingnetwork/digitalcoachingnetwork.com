@@ -45,8 +45,6 @@ block scripts
 
       e.preventDefault()
 
-      $('#pay').fadeOut()
-
       var name        = $(this).attr('data-name')
       var amount      = $(this).attr('data-amount')
       var description = $(this).attr('data-description')
@@ -62,16 +60,21 @@ block scripts
             method: 'POST',
             url: '/charge',
             data: {
-              token: token.id,
-              name: name,
-              amount: amount,
-              description:  description
+              token:       token.id,
+              email:       token.email,
+              name:        name,
+              amount:      amount,
+              description: description
             },
             success: function() {
-              $('#thankyou').fadeIn()
+              $('#pay').fadeOut(function() {
+                $('#thankyou').fadeIn()
+              })
             },
             error: function() {
-              $('#error').fadeIn()
+              $('#pay').fadeOut(function() {
+                $('#error').fadeIn()
+              })
             }
           })
         }

@@ -4,6 +4,7 @@ node_modules
 
 # ignore compiled files
 app/*.js
+app/models
 app/controllers
 app/public/javascripts
 app/public/styles

@@ -108,7 +108,8 @@ gulp.task 'clean', (cb)->
 	del([
 		config.destCss,
 		'app/*.js',
-		'app/controllers/*.js',
+    'app/models',
+		'app/controllers',
 		'app/public/scripts/*.js',
     'app/public/images/sprites'
 	], cb)
