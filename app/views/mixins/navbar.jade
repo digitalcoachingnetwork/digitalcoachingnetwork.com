@@ -20,3 +20,11 @@ mixin navbar()
         //- ul.nav.navbar-nav.navbar-right
           li.hidden-xs
             a.btn-action.btn-primary(href='#bottom') Sign Up
+
+//- navbar with just a link to the home page
+mixin navbarSimple()
+  nav#stickynav.navbar.navbar-transparent.navbar-fixed-top(role='navigation')
+    .container-fluid
+      .navbar-header
+        span.navbar-brand-container
+          a.navbar-brand.nowrap(href='/') digital coaching network

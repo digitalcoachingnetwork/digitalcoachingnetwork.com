@@ -7,5 +7,9 @@ config =
   trello:
     # id of the Trello list to insert new clients
     newClientListId: '55bd2c2725cd879d995bc14d'
+  analyticsId: 'UA-66284408-1'
+  hourly: 75,
+  stripe:
+    key: 'pk_test_N7qBnDOmgJ0O8EiwrbPQIXeI'
 
 module.exports = config

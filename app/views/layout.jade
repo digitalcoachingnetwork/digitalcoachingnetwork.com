@@ -1,20 +1,19 @@
 doctype html
 html.spread(lang='en')
-	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		block title
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    block title
 
-		link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-		link(rel='stylesheet' href="http://code.jquery.com/ui/1.10.4/themes/black-tie/jquery-ui.css")
-		link(rel='stylesheet' href='/styles/out.min.css')
-		block styles
-		include includes/analytics.html
+    link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet' href="http://code.jquery.com/ui/1.10.4/themes/black-tie/jquery-ui.css")
+    link(rel='stylesheet' href='/styles/out.min.css')
+    block styles
+    include includes/analytics
 
-	body.spread
-		block content
+  body.spread
+    block content
 
-	block scripts
-		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-		script(src='//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
-		script(src='/javascripts/index.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    block scripts
