@@ -37,7 +37,18 @@ router.get '/pay', (req, res)->
     config: config
 
 router.post '/charge', (req, res)->
-  res.status(500).send('oi')
+  stripe.charges.create({
+    amount:      req.body.amount,
+    currency:    'usd',
+    source:      req.body.token,
+    description: req.body.description
+  })
+  .then((charge)->
+    res.status(200).send()
+  , (err)->
+    console.log(err)
+    res.status(500).send(if err.type is 'StripeCardError' then 'Card was declined.' else 'Error charging credit card.')
+  )
 
 router.get '/signup', (req, res)->
 

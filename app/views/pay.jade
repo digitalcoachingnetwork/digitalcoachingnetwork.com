@@ -39,34 +39,42 @@ block scripts
     var stripe = StripeCheckout.configure({
       key: '#{config.stripe.key}',
       image: 'https://s3.amazonaws.com/stripe-uploads/acct_16XJWOC9bvH8OFQUmerchant-icon-1438988192711-logo-128x128.gif',
-      token: function(token) {
-        // POST to the server-side to create the charge
-        $.ajax({
-          method: 'POST',
-          url: '/charge', 
-          data: { id: token.id }, 
-          success: function() {
-            $('#pay').fadeOut(function() {
-                $('#thankyou').fadeIn()
-            })
-          }, 
-          error: function() {
-            $('#pay').fadeOut(function() {
-                $('#error').fadeIn()
-            })
-          }
-        })
-      }
     })
 
     $('.buy-button').on('click', function(e) {
+
       e.preventDefault()
+
+      $('#pay').fadeOut()
+
+      var name        = $(this).attr('data-name')
+      var amount      = $(this).attr('data-amount')
+      var description = $(this).attr('data-description')
 
       // open the stripe popup
       stripe.open({
-        name:         $(this).attr('data-name'),
-        description:  $(this).attr('data-description'),
-        amount:       $(this).attr('data-amount')
+        name:         name,
+        amount:       amount,
+        description:  description,
+        token: function(token) {
+          // POST to the server-side to create the charge
+          $.ajax({
+            method: 'POST',
+            url: '/charge',
+            data: {
+              token: token.id,
+              name: name,
+              amount: amount,
+              description:  description
+            },
+            success: function() {
+              $('#thankyou').fadeIn()
+            },
+            error: function() {
+              $('#error').fadeIn()
+            }
+          })
+        }
       })
     })
 
