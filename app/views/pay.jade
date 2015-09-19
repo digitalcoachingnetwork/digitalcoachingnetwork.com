@@ -2,13 +2,29 @@ extends layout
 
 include mixins/navbar.jade
 
+block scripts
+  script(src='/javascripts/jquery.matchHeight-min.js')
+  script.
+    $(function() {
+
+      // get the different match height group identifiers
+      var matchHeightIds = $.unique($('[data-match-height]').map(function() {
+        return $(this).attr('data-match-height')
+      }).toArray())
+
+      // match the height of each group
+      matchHeightIds.forEach(function(id) {
+        $('[data-match-height="' + id + '"').matchHeight()
+      })
+    })
+
 //- page mixins
 mixin buy-button(name, description, shortDescription, amount, discount)
   - discount = discount || 1
   - var finalAmount = Math.ceil(amount * discount)
-  h1= name
-  h2= description
-  button.buy-button.btn.btn-dark.btn-block.space-above-md(data-name='Digital Coaching' data-description=shortDescription data-amount=finalAmount * 100) Buy Now for 
+  h1(data-match-height=0)= name
+  h2(data-match-height=1)= description
+  button.buy-button.btn.btn-dark.btn-block.space-above-md.wrap(data-name='Digital Coaching' data-description=shortDescription data-amount=finalAmount * 100) Buy Now for 
     if discount !== 1
       strike $#{amount}
     |  $#{finalAmount}
