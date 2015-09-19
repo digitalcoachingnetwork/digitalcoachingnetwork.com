@@ -33,9 +33,13 @@ router.get '/about', (req, res)->
 ############################
 # /pay
 ############################
-router.get '/pay', (req, res)->
+payRoute = (req, res)->
   res.render 'pay',
     config: config
+    hourly: req.params.hourly || config.hourly
+
+router.get '/pay', payRoute
+router.get '/pay/:hourly', payRoute
 
 ############################
 # /charge

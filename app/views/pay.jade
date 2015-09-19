@@ -14,13 +14,13 @@ mixin buy-button(name, description, shortDescription, amount, discount)
     |  $#{finalAmount}
 
 mixin buy1()
-  +buy-button('Single Session', 'A single, 1-hr session with your digital coach.', '1 session', config.hourly)
+  +buy-button('Single Session', 'A single, 1-hr session with your digital coach.', '1 session', hourly)
 
 mixin buy3
-  +buy-button('3-Session Package', 'A discounted package of 3 1-hr sessions with your digital coach.', '3 sessions', config.hourly * 3, 0.93)
+  +buy-button('3-Session Package', 'A discounted package of 3 1-hr sessions with your digital coach.', '3 sessions', hourly * 3, 0.93)
 
 mixin buy10()
-  +buy-button('10-Session Package', 'A discounted package of 10 1-hr sessions with your digital coach.', '10 sessions', config.hourly * 10, 0.88)
+  +buy-button('10-Session Package', 'A discounted package of 10 1-hr sessions with your digital coach.', '10 sessions', hourly * 10, 0.88)
 
 mixin email-message()
   .text-sm Please email 
