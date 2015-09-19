@@ -2,22 +2,6 @@ extends layout
 
 include mixins/navbar.jade
 
-block scripts
-  script(src='/javascripts/jquery.matchHeight-min.js')
-  script.
-    $(function() {
-
-      // get the different match height group identifiers
-      var matchHeightIds = $.unique($('[data-match-height]').map(function() {
-        return $(this).attr('data-match-height')
-      }).toArray())
-
-      // match the height of each group
-      matchHeightIds.forEach(function(id) {
-        $('[data-match-height="' + id + '"').matchHeight()
-      })
-    })
-
 //- page mixins
 mixin buy-button(name, description, shortDescription, amount, discount)
   - discount = discount || 1
@@ -48,7 +32,21 @@ block title
 
 block scripts
   script(src='https://checkout.stripe.com/checkout.js')
+  script(src='/javascripts/jquery.matchHeight-min.js')
   script.
+    $(function() {
+
+      // get the different match height group identifiers
+      var matchHeightIds = $.unique($('[data-match-height]').map(function() {
+        return $(this).attr('data-match-height')
+      }).toArray())
+
+      // match the height of each group
+      matchHeightIds.forEach(function(id) {
+        $('[data-match-height="' + id + '"').matchHeight()
+      })
+    })
+
     var stripe = StripeCheckout.configure({
       key: '#{config.stripe.key}',
       image: 'https://s3.amazonaws.com/stripe-uploads/acct_16XJWOC9bvH8OFQUmerchant-icon-1438988192711-logo-128x128.gif',
