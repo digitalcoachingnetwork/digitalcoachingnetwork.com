@@ -10,6 +10,6 @@ config =
   analyticsId: 'UA-66284408-1'
   hourly: 75,
   stripe:
-    key: 'pk_test_N7qBnDOmgJ0O8EiwrbPQIXeI'
+    key: process.env.STRIPE_PUBLIC_KEY
 
 module.exports = config
