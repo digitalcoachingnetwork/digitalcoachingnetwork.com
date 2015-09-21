@@ -49,7 +49,8 @@ block scripts
 
     var stripe = StripeCheckout.configure({
       key: '#{config.stripe.key}',
-      image: 'https://s3.amazonaws.com/stripe-uploads/acct_16XJWOC9bvH8OFQUmerchant-icon-1438988192711-logo-128x128.gif',
+      bitcoin: true,
+      image: 'https://s3.amazonaws.com/stripe-uploads/acct_16XJWOC9bvH8OFQUmerchant-icon-1438988192711-logo-128x128.gif'
     })
 
     $('.buy-button').on('click', function(e) {
